@@ -1,0 +1,867 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D970B02910BAF3A748CA54AB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD80F3382C21D7F97C6E5E8A /* libPods.a */; };
+		EC9D76DB1C44AF44003C0D33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9D76D91C44AF44003C0D33 /* Main.storyboard */; };
+		EC9D76DD1C44AF44003C0D33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC9D76DC1C44AF44003C0D33 /* Assets.xcassets */; };
+		EC9D76E01C44AF44003C0D33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9D76DE1C44AF44003C0D33 /* LaunchScreen.storyboard */; };
+		EC9D76EB1C44AF44003C0D33 /* GuoKeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D76EA1C44AF44003C0D33 /* GuoKeTests.m */; };
+		EC9D76F61C44AF44003C0D33 /* GuoKeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D76F51C44AF44003C0D33 /* GuoKeUITests.m */; };
+		EC9D77691C44B7CF003C0D33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D77661C44B7CF003C0D33 /* AppDelegate.m */; };
+		EC9D776A1C44B7CF003C0D33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D77671C44B7CF003C0D33 /* main.m */; };
+		EC9D77711C44B83E003C0D33 /* LJBSliderMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D77701C44B83E003C0D33 /* LJBSliderMenuController.m */; };
+		EC9D77741C44B853003C0D33 /* LJBConfigController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D77731C44B853003C0D33 /* LJBConfigController.m */; };
+		EC9D77771C44B872003C0D33 /* LJBMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D77761C44B872003C0D33 /* LJBMainController.m */; };
+		EC9D777A1C44BB49003C0D33 /* LJBSliderMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D77791C44BB49003C0D33 /* LJBSliderMenuCell.m */; };
+		EC9D777D1C44E119003C0D33 /* LJBConnectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D777C1C44E119003C0D33 /* LJBConnectionController.m */; };
+		EC9D77801C44E12A003C0D33 /* LJBFavoriteController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D777F1C44E12A003C0D33 /* LJBFavoriteController.m */; };
+		EC9D77841C44E4E1003C0D33 /* LJBRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D77831C44E4E1003C0D33 /* LJBRootController.m */; };
+		EC9D77871C44F2CD003C0D33 /* UIColor+LJBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D77861C44F2CD003C0D33 /* UIColor+LJBExtension.m */; };
+		EC9D778A1C454F3F003C0D33 /* LJBBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D77891C454F3F003C0D33 /* LJBBaseController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EC9D76E71C44AF44003C0D33 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC9D76C51C44AF44003C0D33 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC9D76CC1C44AF44003C0D33;
+			remoteInfo = GuoKe;
+		};
+		EC9D76F21C44AF44003C0D33 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC9D76C51C44AF44003C0D33 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC9D76CC1C44AF44003C0D33;
+			remoteInfo = GuoKe;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2CA766E230320FB5F29B9443 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		39AD69A5F89569FA2692AE2C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		BD80F3382C21D7F97C6E5E8A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC9D76CD1C44AF44003C0D33 /* GuoKe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuoKe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC9D76DA1C44AF44003C0D33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EC9D76DC1C44AF44003C0D33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EC9D76DF1C44AF44003C0D33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EC9D76E11C44AF44003C0D33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC9D76E61C44AF44003C0D33 /* GuoKeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuoKeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC9D76EA1C44AF44003C0D33 /* GuoKeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuoKeTests.m; sourceTree = "<group>"; };
+		EC9D76EC1C44AF44003C0D33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC9D76F11C44AF44003C0D33 /* GuoKeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuoKeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC9D76F51C44AF44003C0D33 /* GuoKeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuoKeUITests.m; sourceTree = "<group>"; };
+		EC9D76F71C44AF44003C0D33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC9D77651C44B7CF003C0D33 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EC9D77661C44B7CF003C0D33 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EC9D77671C44B7CF003C0D33 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EC9D776F1C44B83E003C0D33 /* LJBSliderMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBSliderMenuController.h; sourceTree = "<group>"; };
+		EC9D77701C44B83E003C0D33 /* LJBSliderMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBSliderMenuController.m; sourceTree = "<group>"; };
+		EC9D77721C44B853003C0D33 /* LJBConfigController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBConfigController.h; sourceTree = "<group>"; };
+		EC9D77731C44B853003C0D33 /* LJBConfigController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBConfigController.m; sourceTree = "<group>"; };
+		EC9D77751C44B872003C0D33 /* LJBMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBMainController.h; sourceTree = "<group>"; };
+		EC9D77761C44B872003C0D33 /* LJBMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBMainController.m; sourceTree = "<group>"; };
+		EC9D77781C44BB49003C0D33 /* LJBSliderMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBSliderMenuCell.h; sourceTree = "<group>"; };
+		EC9D77791C44BB49003C0D33 /* LJBSliderMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBSliderMenuCell.m; sourceTree = "<group>"; };
+		EC9D777B1C44E119003C0D33 /* LJBConnectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBConnectionController.h; sourceTree = "<group>"; };
+		EC9D777C1C44E119003C0D33 /* LJBConnectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBConnectionController.m; sourceTree = "<group>"; };
+		EC9D777E1C44E12A003C0D33 /* LJBFavoriteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBFavoriteController.h; sourceTree = "<group>"; };
+		EC9D777F1C44E12A003C0D33 /* LJBFavoriteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBFavoriteController.m; sourceTree = "<group>"; };
+		EC9D77821C44E4E1003C0D33 /* LJBRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBRootController.h; sourceTree = "<group>"; };
+		EC9D77831C44E4E1003C0D33 /* LJBRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBRootController.m; sourceTree = "<group>"; };
+		EC9D77851C44F2CD003C0D33 /* UIColor+LJBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+LJBExtension.h"; sourceTree = "<group>"; };
+		EC9D77861C44F2CD003C0D33 /* UIColor+LJBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+LJBExtension.m"; sourceTree = "<group>"; };
+		EC9D77881C454F3F003C0D33 /* LJBBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBBaseController.h; sourceTree = "<group>"; };
+		EC9D77891C454F3F003C0D33 /* LJBBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBBaseController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC9D76CA1C44AF44003C0D33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D970B02910BAF3A748CA54AB /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC9D76E31C44AF44003C0D33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC9D76EE1C44AF44003C0D33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		20ECF9DBBFB69A35E04AB6BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BD80F3382C21D7F97C6E5E8A /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4B54D6049CEBD1598EC66EBA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				39AD69A5F89569FA2692AE2C /* Pods.debug.xcconfig */,
+				2CA766E230320FB5F29B9443 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EC9D76C41C44AF44003C0D33 = {
+			isa = PBXGroup;
+			children = (
+				EC9D76CF1C44AF44003C0D33 /* GuoKe */,
+				EC9D76E91C44AF44003C0D33 /* GuoKeTests */,
+				EC9D76F41C44AF44003C0D33 /* GuoKeUITests */,
+				EC9D76CE1C44AF44003C0D33 /* Products */,
+				4B54D6049CEBD1598EC66EBA /* Pods */,
+				20ECF9DBBFB69A35E04AB6BF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EC9D76CE1C44AF44003C0D33 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC9D76CD1C44AF44003C0D33 /* GuoKe.app */,
+				EC9D76E61C44AF44003C0D33 /* GuoKeTests.xctest */,
+				EC9D76F11C44AF44003C0D33 /* GuoKeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC9D76CF1C44AF44003C0D33 /* GuoKe */ = {
+			isa = PBXGroup;
+			children = (
+				EC9D77501C44B7CF003C0D33 /* Classes */,
+				EC9D76D01C44AF44003C0D33 /* Supporting Files */,
+			);
+			path = GuoKe;
+			sourceTree = "<group>";
+		};
+		EC9D76D01C44AF44003C0D33 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC9D76D91C44AF44003C0D33 /* Main.storyboard */,
+				EC9D76DC1C44AF44003C0D33 /* Assets.xcassets */,
+				EC9D76DE1C44AF44003C0D33 /* LaunchScreen.storyboard */,
+				EC9D76E11C44AF44003C0D33 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EC9D76E91C44AF44003C0D33 /* GuoKeTests */ = {
+			isa = PBXGroup;
+			children = (
+				EC9D76EA1C44AF44003C0D33 /* GuoKeTests.m */,
+				EC9D76EC1C44AF44003C0D33 /* Info.plist */,
+			);
+			path = GuoKeTests;
+			sourceTree = "<group>";
+		};
+		EC9D76F41C44AF44003C0D33 /* GuoKeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EC9D76F51C44AF44003C0D33 /* GuoKeUITests.m */,
+				EC9D76F71C44AF44003C0D33 /* Info.plist */,
+			);
+			path = GuoKeUITests;
+			sourceTree = "<group>";
+		};
+		EC9D77501C44B7CF003C0D33 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				EC9D77511C44B7CF003C0D33 /* Category */,
+				EC9D77521C44B7CF003C0D33 /* Common */,
+				EC9D77531C44B7CF003C0D33 /* Module */,
+				EC9D77641C44B7CF003C0D33 /* Other */,
+				EC9D77681C44B7CF003C0D33 /* Tool */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		EC9D77511C44B7CF003C0D33 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				EC9D77851C44F2CD003C0D33 /* UIColor+LJBExtension.h */,
+				EC9D77861C44F2CD003C0D33 /* UIColor+LJBExtension.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		EC9D77521C44B7CF003C0D33 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				EC9D77811C44E4D1003C0D33 /* Controller */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		EC9D77531C44B7CF003C0D33 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				EC9D776B1C44B81E003C0D33 /* SliderMenu */,
+				EC9D77541C44B7CF003C0D33 /* Config */,
+				EC9D77581C44B7CF003C0D33 /* Connection */,
+				EC9D775C1C44B7CF003C0D33 /* Favorite */,
+				EC9D77601C44B7CF003C0D33 /* Main */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		EC9D77541C44B7CF003C0D33 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				EC9D77551C44B7CF003C0D33 /* Controller */,
+				EC9D77561C44B7CF003C0D33 /* Model */,
+				EC9D77571C44B7CF003C0D33 /* View */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		EC9D77551C44B7CF003C0D33 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EC9D77721C44B853003C0D33 /* LJBConfigController.h */,
+				EC9D77731C44B853003C0D33 /* LJBConfigController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EC9D77561C44B7CF003C0D33 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EC9D77571C44B7CF003C0D33 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EC9D77581C44B7CF003C0D33 /* Connection */ = {
+			isa = PBXGroup;
+			children = (
+				EC9D77591C44B7CF003C0D33 /* Controller */,
+				EC9D775A1C44B7CF003C0D33 /* Model */,
+				EC9D775B1C44B7CF003C0D33 /* View */,
+			);
+			path = Connection;
+			sourceTree = "<group>";
+		};
+		EC9D77591C44B7CF003C0D33 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EC9D777B1C44E119003C0D33 /* LJBConnectionController.h */,
+				EC9D777C1C44E119003C0D33 /* LJBConnectionController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EC9D775A1C44B7CF003C0D33 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EC9D775B1C44B7CF003C0D33 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EC9D775C1C44B7CF003C0D33 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				EC9D775D1C44B7CF003C0D33 /* Controller */,
+				EC9D775E1C44B7CF003C0D33 /* Model */,
+				EC9D775F1C44B7CF003C0D33 /* View */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
+		EC9D775D1C44B7CF003C0D33 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EC9D777E1C44E12A003C0D33 /* LJBFavoriteController.h */,
+				EC9D777F1C44E12A003C0D33 /* LJBFavoriteController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EC9D775E1C44B7CF003C0D33 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EC9D775F1C44B7CF003C0D33 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EC9D77601C44B7CF003C0D33 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				EC9D77611C44B7CF003C0D33 /* Controller */,
+				EC9D77621C44B7CF003C0D33 /* Model */,
+				EC9D77631C44B7CF003C0D33 /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		EC9D77611C44B7CF003C0D33 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EC9D77751C44B872003C0D33 /* LJBMainController.h */,
+				EC9D77761C44B872003C0D33 /* LJBMainController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EC9D77621C44B7CF003C0D33 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EC9D77631C44B7CF003C0D33 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EC9D77641C44B7CF003C0D33 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				EC9D77651C44B7CF003C0D33 /* AppDelegate.h */,
+				EC9D77661C44B7CF003C0D33 /* AppDelegate.m */,
+				EC9D77671C44B7CF003C0D33 /* main.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		EC9D77681C44B7CF003C0D33 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		EC9D776B1C44B81E003C0D33 /* SliderMenu */ = {
+			isa = PBXGroup;
+			children = (
+				EC9D776C1C44B81E003C0D33 /* Controller */,
+				EC9D776D1C44B81E003C0D33 /* Model */,
+				EC9D776E1C44B81E003C0D33 /* View */,
+			);
+			path = SliderMenu;
+			sourceTree = "<group>";
+		};
+		EC9D776C1C44B81E003C0D33 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EC9D776F1C44B83E003C0D33 /* LJBSliderMenuController.h */,
+				EC9D77701C44B83E003C0D33 /* LJBSliderMenuController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EC9D776D1C44B81E003C0D33 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EC9D776E1C44B81E003C0D33 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EC9D77781C44BB49003C0D33 /* LJBSliderMenuCell.h */,
+				EC9D77791C44BB49003C0D33 /* LJBSliderMenuCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EC9D77811C44E4D1003C0D33 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EC9D77821C44E4E1003C0D33 /* LJBRootController.h */,
+				EC9D77831C44E4E1003C0D33 /* LJBRootController.m */,
+				EC9D77881C454F3F003C0D33 /* LJBBaseController.h */,
+				EC9D77891C454F3F003C0D33 /* LJBBaseController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EC9D76CC1C44AF44003C0D33 /* GuoKe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC9D76FA1C44AF44003C0D33 /* Build configuration list for PBXNativeTarget "GuoKe" */;
+			buildPhases = (
+				8532892B290500E824BD59EB /* Check Pods Manifest.lock */,
+				EC9D76C91C44AF44003C0D33 /* Sources */,
+				EC9D76CA1C44AF44003C0D33 /* Frameworks */,
+				EC9D76CB1C44AF44003C0D33 /* Resources */,
+				7E9F8A388FF6C6C4CAF63615 /* Embed Pods Frameworks */,
+				6CE514FD281AD1965D84761D /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GuoKe;
+			productName = GuoKe;
+			productReference = EC9D76CD1C44AF44003C0D33 /* GuoKe.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EC9D76E51C44AF44003C0D33 /* GuoKeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC9D76FD1C44AF44003C0D33 /* Build configuration list for PBXNativeTarget "GuoKeTests" */;
+			buildPhases = (
+				EC9D76E21C44AF44003C0D33 /* Sources */,
+				EC9D76E31C44AF44003C0D33 /* Frameworks */,
+				EC9D76E41C44AF44003C0D33 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC9D76E81C44AF44003C0D33 /* PBXTargetDependency */,
+			);
+			name = GuoKeTests;
+			productName = GuoKeTests;
+			productReference = EC9D76E61C44AF44003C0D33 /* GuoKeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EC9D76F01C44AF44003C0D33 /* GuoKeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC9D77001C44AF44003C0D33 /* Build configuration list for PBXNativeTarget "GuoKeUITests" */;
+			buildPhases = (
+				EC9D76ED1C44AF44003C0D33 /* Sources */,
+				EC9D76EE1C44AF44003C0D33 /* Frameworks */,
+				EC9D76EF1C44AF44003C0D33 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC9D76F31C44AF44003C0D33 /* PBXTargetDependency */,
+			);
+			name = GuoKeUITests;
+			productName = GuoKeUITests;
+			productReference = EC9D76F11C44AF44003C0D33 /* GuoKeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC9D76C51C44AF44003C0D33 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = LJB;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = ljunb;
+				TargetAttributes = {
+					EC9D76CC1C44AF44003C0D33 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					EC9D76E51C44AF44003C0D33 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = EC9D76CC1C44AF44003C0D33;
+					};
+					EC9D76F01C44AF44003C0D33 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = EC9D76CC1C44AF44003C0D33;
+					};
+				};
+			};
+			buildConfigurationList = EC9D76C81C44AF44003C0D33 /* Build configuration list for PBXProject "GuoKe" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EC9D76C41C44AF44003C0D33;
+			productRefGroup = EC9D76CE1C44AF44003C0D33 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC9D76CC1C44AF44003C0D33 /* GuoKe */,
+				EC9D76E51C44AF44003C0D33 /* GuoKeTests */,
+				EC9D76F01C44AF44003C0D33 /* GuoKeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EC9D76CB1C44AF44003C0D33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC9D76E01C44AF44003C0D33 /* LaunchScreen.storyboard in Resources */,
+				EC9D76DD1C44AF44003C0D33 /* Assets.xcassets in Resources */,
+				EC9D76DB1C44AF44003C0D33 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC9D76E41C44AF44003C0D33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC9D76EF1C44AF44003C0D33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6CE514FD281AD1965D84761D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E9F8A388FF6C6C4CAF63615 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8532892B290500E824BD59EB /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC9D76C91C44AF44003C0D33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC9D77841C44E4E1003C0D33 /* LJBRootController.m in Sources */,
+				EC9D77711C44B83E003C0D33 /* LJBSliderMenuController.m in Sources */,
+				EC9D776A1C44B7CF003C0D33 /* main.m in Sources */,
+				EC9D777A1C44BB49003C0D33 /* LJBSliderMenuCell.m in Sources */,
+				EC9D77741C44B853003C0D33 /* LJBConfigController.m in Sources */,
+				EC9D77771C44B872003C0D33 /* LJBMainController.m in Sources */,
+				EC9D777D1C44E119003C0D33 /* LJBConnectionController.m in Sources */,
+				EC9D77801C44E12A003C0D33 /* LJBFavoriteController.m in Sources */,
+				EC9D778A1C454F3F003C0D33 /* LJBBaseController.m in Sources */,
+				EC9D77871C44F2CD003C0D33 /* UIColor+LJBExtension.m in Sources */,
+				EC9D77691C44B7CF003C0D33 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC9D76E21C44AF44003C0D33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC9D76EB1C44AF44003C0D33 /* GuoKeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC9D76ED1C44AF44003C0D33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC9D76F61C44AF44003C0D33 /* GuoKeUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EC9D76E81C44AF44003C0D33 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC9D76CC1C44AF44003C0D33 /* GuoKe */;
+			targetProxy = EC9D76E71C44AF44003C0D33 /* PBXContainerItemProxy */;
+		};
+		EC9D76F31C44AF44003C0D33 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC9D76CC1C44AF44003C0D33 /* GuoKe */;
+			targetProxy = EC9D76F21C44AF44003C0D33 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EC9D76D91C44AF44003C0D33 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC9D76DA1C44AF44003C0D33 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EC9D76DE1C44AF44003C0D33 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC9D76DF1C44AF44003C0D33 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EC9D76F81C44AF44003C0D33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EC9D76F91C44AF44003C0D33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EC9D76FB1C44AF44003C0D33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39AD69A5F89569FA2692AE2C /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GuoKe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				"LIBRARY_SEARCH_PATHS[arch=*]" = "";
+				PRODUCT_BUNDLE_IDENTIFIER = ljunb.GuoKe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EC9D76FC1C44AF44003C0D33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CA766E230320FB5F29B9443 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GuoKe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ljunb.GuoKe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		EC9D76FE1C44AF44003C0D33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GuoKeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ljunb.GuoKeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GuoKe.app/GuoKe";
+			};
+			name = Debug;
+		};
+		EC9D76FF1C44AF44003C0D33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GuoKeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ljunb.GuoKeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GuoKe.app/GuoKe";
+			};
+			name = Release;
+		};
+		EC9D77011C44AF44003C0D33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = GuoKeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ljunb.GuoKeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = GuoKe;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		EC9D77021C44AF44003C0D33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = GuoKeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ljunb.GuoKeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = GuoKe;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC9D76C81C44AF44003C0D33 /* Build configuration list for PBXProject "GuoKe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC9D76F81C44AF44003C0D33 /* Debug */,
+				EC9D76F91C44AF44003C0D33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC9D76FA1C44AF44003C0D33 /* Build configuration list for PBXNativeTarget "GuoKe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC9D76FB1C44AF44003C0D33 /* Debug */,
+				EC9D76FC1C44AF44003C0D33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC9D76FD1C44AF44003C0D33 /* Build configuration list for PBXNativeTarget "GuoKeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC9D76FE1C44AF44003C0D33 /* Debug */,
+				EC9D76FF1C44AF44003C0D33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC9D77001C44AF44003C0D33 /* Build configuration list for PBXNativeTarget "GuoKeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC9D77011C44AF44003C0D33 /* Debug */,
+				EC9D77021C44AF44003C0D33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EC9D76C51C44AF44003C0D33 /* Project object */;
+}

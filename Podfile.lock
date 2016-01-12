@@ -1,0 +1,13 @@
+PODS:
+  - Masonry (0.6.3)
+  - ViewDeck (2.4.1)
+
+DEPENDENCIES:
+  - Masonry (~> 0.6.3)
+  - ViewDeck (~> 2.4.1)
+
+SPEC CHECKSUMS:
+  Masonry: ff105a956abcd19a618b2028b121cb638d7a8e2f
+  ViewDeck: e4c744cb5383cbae40cf286c6e7246df33962020
+
+COCOAPODS: 0.39.0
