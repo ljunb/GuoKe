@@ -10,7 +10,6 @@
 #import <IIViewDeckController.h>
 #import "LJBSliderMenuController.h"
 #import "LJBRootController.h"
-#import "LJBBaseController.h"
 
 CGFloat const kViewDeckLeftSize = 100;
 

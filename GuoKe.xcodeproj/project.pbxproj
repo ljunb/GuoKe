@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		D970B02910BAF3A748CA54AB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD80F3382C21D7F97C6E5E8A /* libPods.a */; };
+		EC0CA3671C45FD0A00AADB7D /* LJBArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0CA3661C45FD0A00AADB7D /* LJBArticle.m */; };
+		EC0CA36B1C45FFA900AADB7D /* LJBArticle+LJBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0CA36A1C45FFA900AADB7D /* LJBArticle+LJBRequest.m */; };
+		EC0CA36E1C46003200AADB7D /* LJBHTTPTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0CA36D1C46003200AADB7D /* LJBHTTPTool.m */; };
+		EC0CA3711C4604EF00AADB7D /* LJBArticleParam.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0CA3701C4604EF00AADB7D /* LJBArticleParam.m */; };
+		EC0CA3741C46086B00AADB7D /* LJBArticleFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0CA3731C46086B00AADB7D /* LJBArticleFrame.m */; };
+		EC0CA3771C460F5D00AADB7D /* LJBArticleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0CA3761C460F5D00AADB7D /* LJBArticleCell.m */; };
+		EC0CA37A1C4630D100AADB7D /* UIFont+LJBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0CA3791C4630D100AADB7D /* UIFont+LJBExtension.m */; };
+		EC0CA37D1C463E7600AADB7D /* LJBButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0CA37C1C463E7600AADB7D /* LJBButton.m */; };
+		EC0CA3801C463FD500AADB7D /* UIView+LJBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0CA37F1C463FD500AADB7D /* UIView+LJBExtension.m */; };
 		EC9D76DB1C44AF44003C0D33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9D76D91C44AF44003C0D33 /* Main.storyboard */; };
 		EC9D76DD1C44AF44003C0D33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC9D76DC1C44AF44003C0D33 /* Assets.xcassets */; };
 		EC9D76E01C44AF44003C0D33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9D76DE1C44AF44003C0D33 /* LaunchScreen.storyboard */; };
@@ -47,6 +56,24 @@
 		2CA766E230320FB5F29B9443 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		39AD69A5F89569FA2692AE2C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BD80F3382C21D7F97C6E5E8A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC0CA3651C45FD0A00AADB7D /* LJBArticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBArticle.h; sourceTree = "<group>"; };
+		EC0CA3661C45FD0A00AADB7D /* LJBArticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBArticle.m; sourceTree = "<group>"; };
+		EC0CA3691C45FFA900AADB7D /* LJBArticle+LJBRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LJBArticle+LJBRequest.h"; sourceTree = "<group>"; };
+		EC0CA36A1C45FFA900AADB7D /* LJBArticle+LJBRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LJBArticle+LJBRequest.m"; sourceTree = "<group>"; };
+		EC0CA36C1C46003200AADB7D /* LJBHTTPTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBHTTPTool.h; sourceTree = "<group>"; };
+		EC0CA36D1C46003200AADB7D /* LJBHTTPTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBHTTPTool.m; sourceTree = "<group>"; };
+		EC0CA36F1C4604EF00AADB7D /* LJBArticleParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBArticleParam.h; sourceTree = "<group>"; };
+		EC0CA3701C4604EF00AADB7D /* LJBArticleParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBArticleParam.m; sourceTree = "<group>"; };
+		EC0CA3721C46086B00AADB7D /* LJBArticleFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBArticleFrame.h; sourceTree = "<group>"; };
+		EC0CA3731C46086B00AADB7D /* LJBArticleFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBArticleFrame.m; sourceTree = "<group>"; };
+		EC0CA3751C460F5D00AADB7D /* LJBArticleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBArticleCell.h; sourceTree = "<group>"; };
+		EC0CA3761C460F5D00AADB7D /* LJBArticleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBArticleCell.m; sourceTree = "<group>"; };
+		EC0CA3781C4630D100AADB7D /* UIFont+LJBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+LJBExtension.h"; sourceTree = "<group>"; };
+		EC0CA3791C4630D100AADB7D /* UIFont+LJBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+LJBExtension.m"; sourceTree = "<group>"; };
+		EC0CA37B1C463E7600AADB7D /* LJBButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBButton.h; sourceTree = "<group>"; };
+		EC0CA37C1C463E7600AADB7D /* LJBButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBButton.m; sourceTree = "<group>"; };
+		EC0CA37E1C463FD500AADB7D /* UIView+LJBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LJBExtension.h"; sourceTree = "<group>"; };
+		EC0CA37F1C463FD500AADB7D /* UIView+LJBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LJBExtension.m"; sourceTree = "<group>"; };
 		EC9D76CD1C44AF44003C0D33 /* GuoKe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuoKe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC9D76DA1C44AF44003C0D33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC9D76DC1C44AF44003C0D33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -124,6 +151,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		EC0CA3681C45FF9000AADB7D /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				EC0CA3691C45FFA900AADB7D /* LJBArticle+LJBRequest.h */,
+				EC0CA36A1C45FFA900AADB7D /* LJBArticle+LJBRequest.m */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
 		EC9D76C41C44AF44003C0D33 = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +223,7 @@
 		EC9D77501C44B7CF003C0D33 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				EC0CA3681C45FF9000AADB7D /* Request */,
 				EC9D77511C44B7CF003C0D33 /* Category */,
 				EC9D77521C44B7CF003C0D33 /* Common */,
 				EC9D77531C44B7CF003C0D33 /* Module */,
@@ -199,8 +236,12 @@
 		EC9D77511C44B7CF003C0D33 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				EC0CA37E1C463FD500AADB7D /* UIView+LJBExtension.h */,
+				EC0CA37F1C463FD500AADB7D /* UIView+LJBExtension.m */,
 				EC9D77851C44F2CD003C0D33 /* UIColor+LJBExtension.h */,
 				EC9D77861C44F2CD003C0D33 /* UIColor+LJBExtension.m */,
+				EC0CA3781C4630D100AADB7D /* UIFont+LJBExtension.h */,
+				EC0CA3791C4630D100AADB7D /* UIFont+LJBExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -346,6 +387,12 @@
 		EC9D77621C44B7CF003C0D33 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EC0CA3651C45FD0A00AADB7D /* LJBArticle.h */,
+				EC0CA3661C45FD0A00AADB7D /* LJBArticle.m */,
+				EC0CA36F1C4604EF00AADB7D /* LJBArticleParam.h */,
+				EC0CA3701C4604EF00AADB7D /* LJBArticleParam.m */,
+				EC0CA3721C46086B00AADB7D /* LJBArticleFrame.h */,
+				EC0CA3731C46086B00AADB7D /* LJBArticleFrame.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -353,6 +400,10 @@
 		EC9D77631C44B7CF003C0D33 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EC0CA3751C460F5D00AADB7D /* LJBArticleCell.h */,
+				EC0CA3761C460F5D00AADB7D /* LJBArticleCell.m */,
+				EC0CA37B1C463E7600AADB7D /* LJBButton.h */,
+				EC0CA37C1C463E7600AADB7D /* LJBButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -370,6 +421,8 @@
 		EC9D77681C44B7CF003C0D33 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				EC0CA36C1C46003200AADB7D /* LJBHTTPTool.h */,
+				EC0CA36D1C46003200AADB7D /* LJBHTTPTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -605,12 +658,21 @@
 				EC9D77841C44E4E1003C0D33 /* LJBRootController.m in Sources */,
 				EC9D77711C44B83E003C0D33 /* LJBSliderMenuController.m in Sources */,
 				EC9D776A1C44B7CF003C0D33 /* main.m in Sources */,
+				EC0CA3741C46086B00AADB7D /* LJBArticleFrame.m in Sources */,
+				EC0CA3671C45FD0A00AADB7D /* LJBArticle.m in Sources */,
+				EC0CA3801C463FD500AADB7D /* UIView+LJBExtension.m in Sources */,
+				EC0CA3771C460F5D00AADB7D /* LJBArticleCell.m in Sources */,
+				EC0CA36B1C45FFA900AADB7D /* LJBArticle+LJBRequest.m in Sources */,
 				EC9D777A1C44BB49003C0D33 /* LJBSliderMenuCell.m in Sources */,
+				EC0CA37D1C463E7600AADB7D /* LJBButton.m in Sources */,
+				EC0CA3711C4604EF00AADB7D /* LJBArticleParam.m in Sources */,
 				EC9D77741C44B853003C0D33 /* LJBConfigController.m in Sources */,
 				EC9D77771C44B872003C0D33 /* LJBMainController.m in Sources */,
+				EC0CA36E1C46003200AADB7D /* LJBHTTPTool.m in Sources */,
 				EC9D777D1C44E119003C0D33 /* LJBConnectionController.m in Sources */,
 				EC9D77801C44E12A003C0D33 /* LJBFavoriteController.m in Sources */,
 				EC9D778A1C454F3F003C0D33 /* LJBBaseController.m in Sources */,
+				EC0CA37A1C4630D100AADB7D /* UIFont+LJBExtension.m in Sources */,
 				EC9D77871C44F2CD003C0D33 /* UIColor+LJBExtension.m in Sources */,
 				EC9D77691C44B7CF003C0D33 /* AppDelegate.m in Sources */,
 			);
