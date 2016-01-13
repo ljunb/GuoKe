@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, LJBButtonType) {
+    LJBButtonLeftType = 0,
+    LJBButtonRightType
+};
+
 @interface LJBButton : UIButton
+
+@property (nonatomic, assign) LJBButtonType type;
 
 @end

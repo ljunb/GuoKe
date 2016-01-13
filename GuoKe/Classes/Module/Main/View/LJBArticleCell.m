@@ -19,6 +19,8 @@
 
 @property (nonatomic, strong) UIImageView * headImage;
 
+@property (nonatomic, strong) UIView * titleBgView;
+
 @property (nonatomic, strong) UILabel * title;
 
 @property (nonatomic, strong) UIView * line;
@@ -43,18 +45,16 @@
 - (void)setupSubviews {
     
     self.headImage.frame = _articleF.imageF;
-
+    
+    self.titleBgView.frame = _articleF.titleBgF;
+    
     self.title.frame     = _articleF.titleF;
     
     self.line.frame      = _articleF.lineF;
     
     self.source.frame    = _articleF.sourceF;
     
-    [self.contentView cornerRadius:4];
-    self.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    self.layer.borderWidth = 0.5;
-    
-//    self.time.frame      = _articleF.timeF;
+    self.time.frame      = _articleF.timeF;
 }
 
 - (void)setArticleF:(LJBArticleFrame *)articleF {
@@ -70,8 +70,26 @@
     [self.source setTitle:_articleF.article.source_name forState:UIControlStateDisabled];
     [self.source setImage:[UIImage imageNamed:@"icon_source"] forState:UIControlStateDisabled];
     
-    [self.time setTitle:_articleF.article.date_picked forState:UIControlStateDisabled];
+    [self.time setTitle:_articleF.article.source_name forState:UIControlStateDisabled];
     [self.time setImage:[UIImage imageNamed:@"icon_time"] forState:UIControlStateDisabled];
+    
+    // 设置圆角
+    [self setCornerRadii:CGSizeMake(5, 5) roundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight fromView:self.headImage];
+    [self setCornerRadii:CGSizeMake(5, 5) roundingCorners:UIRectCornerBottomLeft fromView:self.source];
+    [self setCornerRadii:CGSizeMake(5, 5) roundingCorners:UIRectCornerBottomRight fromView:self.time];
+}
+
+#pragma mark - private method
+- (void)setCornerRadii:(CGSize)size roundingCorners:(UIRectCorner)corner fromView:(UIView *)view {
+    
+    UIBezierPath * path = [UIBezierPath bezierPathWithRoundedRect:view.bounds
+                                                byRoundingCorners:corner
+                                                      cornerRadii:size];
+    CAShapeLayer * layer = [[CAShapeLayer alloc] init];
+    layer.frame = view.bounds;
+    layer.path = path.CGPath;
+    
+    view.layer.mask = layer;
 }
 
 
@@ -80,15 +98,27 @@
     
     if (!_headImage) {
         _headImage = [[UIImageView alloc] init];
+        _headImage.backgroundColor = [UIColor whiteColor];
         [self.contentView addSubview:_headImage];
     }
     return _headImage;
+}
+
+- (UIView *)titleBgView {
+    
+    if (!_titleBgView) {
+        _titleBgView = [[UIView alloc] init];
+        _titleBgView.backgroundColor = [UIColor whiteColor];
+        [self.contentView addSubview:_titleBgView];
+    }
+    return _titleBgView;
 }
 
 - (UILabel *)title {
     
     if (!_title) {
         _title = [[UILabel alloc] init];
+        _title.backgroundColor = [UIColor whiteColor];
         _title.numberOfLines = 0;
         _title.font = [UIFont fontOfTitle];
         [self.contentView addSubview:_title];
@@ -115,6 +145,8 @@
         _source.titleLabel.font = [UIFont systemFontOfSize:10];
         _source.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
         _source.enabled = NO;
+        _source.backgroundColor = [UIColor whiteColor];
+        _source.type = LJBButtonLeftType;
         [self.contentView addSubview:_source];
     }
     return _source;
@@ -128,6 +160,8 @@
         _time.titleLabel.font = [UIFont systemFontOfSize:10];
         _time.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
         _time.enabled = NO;
+        _time.backgroundColor = [UIColor whiteColor];
+        _time.type = LJBButtonRightType;
         [self.contentView addSubview:_time];
     }
     return _time;

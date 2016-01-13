@@ -14,9 +14,19 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    self.imageView.x = 0;
-    
-    self.titleLabel.x = CGRectGetMaxX(self.imageView.frame);
+    if (self.type == LJBButtonLeftType) {   // 靠左
+        
+        self.imageView.x = 5;
+        
+        self.titleLabel.x = CGRectGetMaxX(self.imageView.frame);
+        
+    } else {                                // 靠右
+        
+        self.titleLabel.x = self.width - self.titleLabel.width - 5;
+        
+        self.imageView.x = CGRectGetMinX(self.titleLabel.frame) - self.imageView.width;
+    }
+
 }
 
 @end

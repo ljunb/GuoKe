@@ -10,6 +10,7 @@
 #import "LJBArticle+LJBRequest.h"
 #import "LJBArticleFrame.h"
 #import "LJBArticleCell.h"
+#import "UIColor+LJBExtension.h"
 #import <Masonry.h>
 #import <CHTCollectionViewWaterfallLayout.h>
 
@@ -45,7 +46,7 @@ static NSString * const kLJBArticleCellIdentifier       = @"LJBArticleCell";
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view).insets(UIEdgeInsetsZero);
     }];
-    self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.collectionView.backgroundColor = [UIColor articleCollectionViewBackgroundColor];
 }
 
 #pragma mark - 注册cell

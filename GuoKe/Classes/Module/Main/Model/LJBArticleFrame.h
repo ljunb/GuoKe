@@ -21,6 +21,8 @@
 
 @property (nonatomic, assign) CGRect imageF;
 
+@property (nonatomic, assign) CGRect titleBgF;
+
 @property (nonatomic, assign) CGRect titleF;
 
 @property (nonatomic, assign) CGRect lineF;

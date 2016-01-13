@@ -15,4 +15,8 @@
     return [UIColor colorWithRed:49/255.0 green:50/255.0 blue:51/255.0 alpha:1];
 }
 
++ (UIColor *)articleCollectionViewBackgroundColor {
+    return [UIColor colorWithRed:231/255.0 green:233/255.0 blue:233/255.0 alpha:1];
+}
+
 @end

@@ -12,4 +12,6 @@
 
 + (UIColor *)sliderViewBackgroundColor;
 
++ (UIColor *)articleCollectionViewBackgroundColor;
+
 @end
