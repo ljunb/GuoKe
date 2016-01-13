@@ -67,7 +67,7 @@ typedef NS_ENUM(NSInteger, LJBControllerType) {
 #pragma mark - 基础配置
 - (void)initBaseConfig {
     
-    self.show = YES;
+    self.show = YES;    // 初始显示中心VC
     
     self.viewDeckController.delegate = self;
 }
@@ -86,6 +86,15 @@ typedef NS_ENUM(NSInteger, LJBControllerType) {
     
     self.currentController = unc;
     [self addChildViewController:self.currentController];
+}
+
+
+#pragma mark - LJBSliderMenuControllerDelegate
+- (void)sliderMenuController:(LJBSliderMenuController *)sliderMenuController didSelectedItemAtIndex:(NSInteger)index {
+    
+    self.title = self.controllerTitles[index];
+    
+    [self setupChildControllerWithIndex:index];
 }
 
 #pragma mark - 添加子VC
@@ -127,13 +136,6 @@ typedef NS_ENUM(NSInteger, LJBControllerType) {
     self.currentController = unc;
 }
 
-#pragma mark - LJBSliderMenuControllerDelegate
-- (void)sliderMenuController:(LJBSliderMenuController *)sliderMenuController didSelectedItemAtIndex:(NSInteger)index {
-    
-    self.title = self.controllerTitles[index];
-    
-    [self setupChildControllerWithIndex:index];
-}
 
 #pragma mark - IIViewDeckControllerDelegate
 #pragma mark 滑出侧滑菜单
@@ -160,33 +162,16 @@ typedef NS_ENUM(NSInteger, LJBControllerType) {
     if (self.isShow) {  // 显示中心VC
         
         [self.viewDeckController closeLeftView];
-        
-        [self sliderMenuHide];
+
+        [self hideCoverView];
         
     } else {            // 隐藏中心VC
         
         [self.viewDeckController openLeftView];
         
-        [self sliderMenuShow];
+        [self showCoverView];
     }
 }
-
-#pragma mark - 侧滑菜单已隐藏
-- (void)sliderMenuHide {
-    
-    self.show = YES;
-    
-    [self hideCoverView];
-}
-
-#pragma mark - 侧滑菜单已显示
-- (void)sliderMenuShow {
-    
-    self.show = NO;
-    
-    [self showCoverView];
-}
-
 
 #pragma mark - 显示遮盖层
 - (void)showCoverView {
@@ -195,7 +180,9 @@ typedef NS_ENUM(NSInteger, LJBControllerType) {
         _coverView = [[UIView alloc] initWithFrame:self.view.bounds];
         [self.view addSubview:_coverView];
         
-        UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickedCoverView)];
+        // 遮盖层添加单击手势
+        UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                               action:@selector(clickedCoverView)];
         [_coverView addGestureRecognizer:tap];
     }
 }
