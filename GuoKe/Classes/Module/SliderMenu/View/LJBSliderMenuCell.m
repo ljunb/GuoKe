@@ -10,13 +10,15 @@
 #import "AppDelegate.h"
 #import <Masonry.h>
 
-static CGFloat const MenuIconTopAndBottomMargin = 15;
-static CGFloat const MenuIconLeftMargin         = 20;
-static CGFloat const MenuIconWidthAndHeight     = 25;
+static CGFloat const kMenuIconTopAndBottomMargin = 15;
+static CGFloat const kMenuIconLeftMargin         = 20;
+static CGFloat const kMenuIconWidthAndHeight     = 25;
 
-static CGFloat const MenuIconAndTitleSpace      = 15;
+static CGFloat const kMenuIconAndTitleSpace      = 15;
 
-static CGFloat BottomLineHeight                 = 2;
+static CGFloat const kIndicatorWidthAndHeight    = 20;
+
+static CGFloat kBottomLineHeight                 = 2;
 
 
 @interface LJBSliderMenuCell ()
@@ -51,10 +53,10 @@ static CGFloat BottomLineHeight                 = 2;
     });
     
     [_menuIcon mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView.mas_top).offset(MenuIconTopAndBottomMargin);
-        make.bottom.equalTo(self.contentView.mas_bottom).offset(-MenuIconTopAndBottomMargin);
-        make.left.equalTo(self.contentView.mas_left).offset(MenuIconLeftMargin);
-        make.size.mas_equalTo(CGSizeMake(MenuIconWidthAndHeight, MenuIconWidthAndHeight));
+        make.top.equalTo(self.contentView.mas_top).offset(kMenuIconTopAndBottomMargin);
+        make.bottom.equalTo(self.contentView.mas_bottom).offset(-kMenuIconTopAndBottomMargin);
+        make.left.equalTo(self.contentView.mas_left).offset(kMenuIconLeftMargin);
+        make.size.mas_equalTo(CGSizeMake(kMenuIconWidthAndHeight, kMenuIconWidthAndHeight));
     }];
     
     // 菜单标题
@@ -68,7 +70,7 @@ static CGFloat BottomLineHeight                 = 2;
     
     [_menuTitle mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.contentView);
-        make.left.equalTo(_menuIcon.mas_right).offset(MenuIconAndTitleSpace);
+        make.left.equalTo(_menuIcon.mas_right).offset(kMenuIconAndTitleSpace);
     }];
     
     // 右边箭头
@@ -80,8 +82,8 @@ static CGFloat BottomLineHeight                 = 2;
     
     [_indicatorIcon mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.contentView);
-        make.right.equalTo(self.contentView.mas_right).offset(-(kViewDeckLeftSize + MenuIconLeftMargin));
-        make.size.mas_equalTo(CGSizeMake(20, 20));
+        make.right.equalTo(self.contentView.mas_right).offset(-(kViewDeckLeftSize + kMenuIconLeftMargin));
+        make.size.mas_equalTo(CGSizeMake(kIndicatorWidthAndHeight, kIndicatorWidthAndHeight));
     }];
     
     // 底部黑线
@@ -92,13 +94,13 @@ static CGFloat BottomLineHeight                 = 2;
     });
     [_bottomLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.and.left.and.bottom.equalTo(self.contentView);
-        make.height.equalTo(@(BottomLineHeight));
+        make.height.equalTo(@(kBottomLineHeight));
     }];
 }
 
-- (void)configCellWithTitle:(NSString *)title norImage:(NSString *)norImage {
+- (void)configCellWithTitle:(NSString *)title image:(NSString *)image {
     
-    _menuIcon.image = [UIImage imageNamed:norImage];
+    _menuIcon.image = [UIImage imageNamed:image];
     
     _menuTitle.text = title;
     

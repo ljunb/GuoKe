@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-extern NSString * const kLJBBaseControllerShowNotification;
-extern NSString * const kLJBBaseControllerHideNotification;
+extern NSString * const kLJBBaseControllerDidClickMenuItemNotification;
 
 @interface LJBBaseController : UIViewController
 

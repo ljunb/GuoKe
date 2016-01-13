@@ -10,6 +10,12 @@
 
 @interface LJBSliderMenuCell : UITableViewCell
 
-- (void)configCellWithTitle:(NSString *)title norImage:(NSString *)norImage;
+/**
+ *  设置cell内容
+ *
+ *  @param title    菜单名称
+ *  @param norImage 菜单图片
+ */
+- (void)configCellWithTitle:(NSString *)title image:(NSString *)image;
 
 @end

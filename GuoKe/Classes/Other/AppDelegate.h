@@ -10,9 +10,6 @@
 
 extern CGFloat const kViewDeckLeftSize;
 
-extern NSString * const kLJBSliderMenuControllerShowNotification;
-extern NSString * const kLJBSliderMenuControllerHideNotification;
-
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

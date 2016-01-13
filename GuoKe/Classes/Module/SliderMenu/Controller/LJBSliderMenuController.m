@@ -8,7 +8,9 @@
 
 #import "LJBSliderMenuController.h"
 #import "LJBSliderMenuCell.h"
+#import "LJBRootController.h"
 #import <Masonry.h>
+#import <ViewDeck.h>
 #import "UIColor+LJBExtension.h"
 
 static NSString * const kSliderMenuCellIdentifier = @"LJBSliderMenuCell";
@@ -80,15 +82,23 @@ static NSString * const kSliderMenuCellIdentifier = @"LJBSliderMenuCell";
     
     LJBSliderMenuCell * cell = [tableView dequeueReusableCellWithIdentifier:kSliderMenuCellIdentifier forIndexPath:indexPath];
     
-    [cell configCellWithTitle:_menuTitles[indexPath.row] norImage:_menuImages[indexPath.row]];
+    [cell configCellWithTitle:_menuTitles[indexPath.row] image:_menuImages[indexPath.row]];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (self.ClickedItemBlock) {
-        self.ClickedItemBlock(indexPath.row);
+    // 回收左边菜单
+    [self.viewDeckController toggleLeftViewAnimated:YES];
+    
+    // 取得中心VC
+    LJBRootController * rootVC = (LJBRootController *)self.viewDeckController.centerController;
+    self.delegate = rootVC;
+    
+    // 通知代理
+    if ([self.delegate respondsToSelector:@selector(sliderMenuController:didSelectedItemAtIndex:)]) {
+        [self.delegate sliderMenuController:self didSelectedItemAtIndex:indexPath.row];
     }
 }
 

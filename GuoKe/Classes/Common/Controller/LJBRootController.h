@@ -10,6 +10,4 @@
 
 @interface LJBRootController : UIViewController
 
-@property (nonatomic, copy) void(^ClickedItemAtIndexBlock)(NSInteger index);
-
 @end

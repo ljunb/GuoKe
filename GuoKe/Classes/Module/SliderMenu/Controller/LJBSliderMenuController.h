@@ -8,8 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@class LJBSliderMenuController;
+
+@protocol LJBSliderMenuControllerDelegate <NSObject>
+
+- (void)sliderMenuController:(LJBSliderMenuController *)sliderMenuController
+      didSelectedItemAtIndex:(NSInteger)index;
+
+@end
+
 @interface LJBSliderMenuController : UIViewController
 
-@property (nonatomic, copy) void(^ClickedItemBlock)(NSInteger index);
+@property (nonatomic, weak) id<LJBSliderMenuControllerDelegate> delegate;
 
 @end
