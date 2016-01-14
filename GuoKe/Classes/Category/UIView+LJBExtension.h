@@ -19,16 +19,4 @@
 @property (nonatomic, assign) CGFloat centerX;
 @property (nonatomic, assign) CGFloat centerY;
 
-- (void)cornerRadius:(CGFloat)radius;
-
-@end
-
-// UIBarButtonItem分类，导航栏按钮
-@interface UIBarButtonItem (LJBExtension)
-
-+ (UIBarButtonItem *)itemWithTarget:(id)target
-                             Action:(SEL)action
-                        normalImage:(NSString *)normalImage
-                    hightlightImage:(NSString *)hightlightImage;
-
 @end

@@ -10,8 +10,18 @@
 
 @interface UIColor (LJBExtension)
 
+/**
+ *  侧滑菜单背景颜色
+ *
+ *  @return 自定义颜色
+ */
 + (UIColor *)sliderViewBackgroundColor;
 
+/**
+ *  首页UICollectionView背景颜色
+ *
+ *  @return 自定义颜色
+ */
 + (UIColor *)articleCollectionViewBackgroundColor;
 
 @end

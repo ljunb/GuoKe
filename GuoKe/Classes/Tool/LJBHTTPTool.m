@@ -38,23 +38,6 @@
     }];
 }
 
-+ (BOOL)hasConnected {
-    
-    __block BOOL hasConnected = YES;
-    
-    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
-    
-    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-        
-        if (status == AFNetworkReachabilityStatusNotReachable || status == AFNetworkReachabilityStatusUnknown) {
-            hasConnected = NO;
-        }
-        
-    }];
-    
-    return hasConnected;
-}
-
 + (void)get:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure {
     
     AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];

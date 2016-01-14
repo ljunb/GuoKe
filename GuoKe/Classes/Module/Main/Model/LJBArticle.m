@@ -25,8 +25,6 @@
         
         NSDateComponents * components = [pickedDate compareDateByNow];
         
-        NSLog(@"%@", components);
-        
         if (components.month >= 6) {                    // 超过6个月
             
             return @"半年前";
@@ -51,7 +49,7 @@
         }
     }
     
-    // 缓存的日期（中文，默认为1970年）
+    // 缓存的日期（中文）
     return _date_picked;
 }
 

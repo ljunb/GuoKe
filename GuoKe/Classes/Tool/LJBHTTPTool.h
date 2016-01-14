@@ -10,15 +10,22 @@
 
 @interface LJBHTTPTool : NSObject
 
+/**
+ *  封装AFNetworking请求方法
+ *
+ *  @param url     URL
+ *  @param params  请求参数字典
+ *  @param success 请求成功回调
+ *  @param failure 请求失败回调
+ */
 + (void)get:(NSString *)url params:(NSDictionary *)params success:(void(^)(id response))success failure:(void(^)(NSError *error))failure;
 
 /**
- *  检查网络连接状态
+ *  检测网络状态
  *
- *  @return YES or NO
+ *  @param connected    网络连接正常回调
+ *  @param disconnected 网络连接异常回调
  */
-+ (BOOL)hasConnected;
-
 + (void)checkNetworkWithConnected:(void(^)())connected disconnected:(void(^)())disconnected;
 
 @end

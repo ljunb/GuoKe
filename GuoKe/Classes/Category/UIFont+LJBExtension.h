@@ -10,6 +10,11 @@
 
 @interface UIFont (LJBExtension)
 
+/**
+ *  首页文章标题字体大小
+ *
+ *  @return 自定义字体
+ */
 + (UIFont *)fontOfTitle;
 
 @end
