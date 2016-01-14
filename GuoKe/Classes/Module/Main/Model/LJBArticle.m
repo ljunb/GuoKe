@@ -12,6 +12,9 @@
 @implementation LJBArticle
 
 - (NSString *)date_picked {
+
+    // 保存原始时间戳，用于请求更多文章数据
+    _sourcePickedDate = _date_picked;
     
     NSDateFormatter * fmt = [[NSDateFormatter alloc] init];
     
@@ -21,6 +24,8 @@
     if ([pickedDate isThisYear]) {                      // 今年
         
         NSDateComponents * components = [pickedDate compareDateByNow];
+        
+        NSLog(@"%@", components);
         
         if (components.month >= 6) {                    // 超过6个月
             
@@ -53,9 +58,9 @@
 #pragma mark - 处理当月
 - (NSString *)compareDateByCurrentMonthWithComponents:(NSDateComponents *)components {
     
-    if (components.weekday >= 1) {      // 超过一周
+    if (components.weekOfMonth >= 1) {      // 超过一周
         
-        return [NSString stringWithFormat:@"%ld周前", components.weekday];
+        return [NSString stringWithFormat:@"%ld周前", components.weekOfMonth];
         
     } else {
         
@@ -65,7 +70,6 @@
         } else {                        // 当天
             
             return [self compareDateByCurrentDayWithComponents:components];
-            
         }
     }
 }
@@ -73,7 +77,7 @@
 #pragma mark - 处理当天
 - (NSString *)compareDateByCurrentDayWithComponents:(NSDateComponents *)components {
     
-    if (components.hour >= 12) {        // 超过半天
+    if (components.hour >= 6) {        // 超过半天
         
         return @"半天前";
         

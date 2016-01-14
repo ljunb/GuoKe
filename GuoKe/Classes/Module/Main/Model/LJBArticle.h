@@ -19,7 +19,10 @@
 
 @property (nonatomic, copy) NSString * date_picked;
 
-@property (nonatomic, copy) NSString * date_created;
+/**
+ *  保存挑选时间原始时间戳
+ */
+@property (nonatomic, copy) NSString * sourcePickedDate;
 
 /**
  *  是否收藏

@@ -83,7 +83,7 @@ static NSString * const kLJBArticleCellIdentifier       = @"LJBArticleCell";
         LJBArticleFrame * lastArticleF = self.articleFrames.lastObject;
         
         // 参数模型
-        LJBArticleParam * param = [LJBArticleParam paramWithSincePickedDate:lastArticleF.article.date_created];
+        LJBArticleParam * param = [LJBArticleParam paramWithSincePickedDate:lastArticleF.article.sourcePickedDate];
         
         [self fetchMoreArticleWithParam:param];
     }];

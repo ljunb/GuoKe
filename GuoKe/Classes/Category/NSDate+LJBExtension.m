@@ -30,7 +30,7 @@
     
     // 日历对象
     NSCalendar * calendar = [NSCalendar currentCalendar];
-    NSCalendarUnit unit = NSCalendarUnitMonth | NSCalendarUnitWeekday | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute;
+    NSCalendarUnit unit = NSCalendarUnitMonth | NSCalendarUnitWeekOfMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute;
     
     // 当前时间
     NSDate * currentDate = [NSDate date];
