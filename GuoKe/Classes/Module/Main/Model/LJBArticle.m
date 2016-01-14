@@ -38,9 +38,15 @@
     } else {                                            // 非今年
         
         fmt.dateFormat = @"yyyy-MM-dd HH:mm";
-        return [fmt stringFromDate:pickedDate];
+        
+        NSString * dateStr = [fmt stringFromDate:pickedDate];
+        
+        if (![dateStr hasPrefix:@"1970-01-01"]) {        // 非缓存的日期
+            return dateStr;
+        }
     }
     
+    // 缓存的日期（中文，默认为1970年）
     return _date_picked;
 }
 

@@ -1,3 +1,4 @@
+pod 'FMDB', '~> 2.5'
 pod 'MJRefresh', '~> 3.0.7'
 pod 'MMProgressHUD', '~> 0.3.2'
 pod 'SDWebImage', '~> 3.7.3'

@@ -13,6 +13,8 @@
 #import "LJBArticleCell.h"
 #import "UIColor+LJBExtension.h"
 #import "LJBArticleParam.h"
+#import "LJBHTTPTool.h"
+#import "LJBDBTool.h"
 #import <Masonry.h>
 #import <MJRefresh.h>
 #import <CHTCollectionViewWaterfallLayout.h>
@@ -31,6 +33,14 @@ static NSString * const kLJBArticleCellIdentifier       = @"LJBArticleCell";
 
 @implementation LJBMainController
 
+#pragma mark - Life Cycle
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    // 检测网络状态
+    [self checkNetwork];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -41,8 +51,6 @@ static NSString * const kLJBArticleCellIdentifier       = @"LJBArticleCell";
     [self registerCell];
     
     [self addRefresh];
-    
-    [self fetchLatestArticle];
 }
 
 #pragma mark - 初始化UICollectionView
@@ -57,8 +65,7 @@ static NSString * const kLJBArticleCellIdentifier       = @"LJBArticleCell";
 #pragma mark - 注册cell
 - (void)registerCell {
     
-    [self.collectionView registerClass:[LJBArticleCell class]
-            forCellWithReuseIdentifier:kLJBArticleCellIdentifier];
+    [self.collectionView registerClass:[LJBArticleCell class] forCellWithReuseIdentifier:kLJBArticleCellIdentifier];
 }
 
 #pragma mark - 添加上/拉刷新  
@@ -102,6 +109,7 @@ static NSString * const kLJBArticleCellIdentifier       = @"LJBArticleCell";
         });
         
         // 缓存数据
+        [self storeArticles];
         
     } failureBlock:^(NSError *error) {
         
@@ -123,6 +131,9 @@ static NSString * const kLJBArticleCellIdentifier       = @"LJBArticleCell";
             
             [self.collectionView.mj_footer endRefreshing];
         });
+        
+        // 缓存数据
+        [self storeArticles];
         
     } failureBlock:^(NSError *error) {
         
@@ -151,6 +162,49 @@ static NSString * const kLJBArticleCellIdentifier       = @"LJBArticleCell";
     LJBArticleFrame * articleF = self.articleFrames[indexPath.item];
     
     return articleF.cellSize;
+}
+
+#pragma mark - 检测网络
+- (void)checkNetwork {
+    
+    [LJBHTTPTool checkNetworkWithConnected:^{
+        
+        // 当前网络连接正常，获取最新数据
+        [self fetchLatestArticle];
+        
+    } disconnected:^{
+        
+        // 当前无网络，从数据库缓存中读取数据
+        [self getCachedArticle];
+    }];
+}
+
+#pragma mark - 缓存数据
+- (void)storeArticles {
+    
+    // 清空原数据
+    [[LJBDBTool sharedDB] removeAllAritcles];
+    
+    // 缓存数据
+    for (LJBArticleFrame * articleF in self.articleFrames) {
+        
+        [[LJBDBTool sharedDB] storeArticle:articleF];
+    }
+}
+
+#pragma mark - 从数据库获取数据
+- (void)getCachedArticle {
+
+    // 移除原数据
+    if (self.articleFrames.count) {
+        [self.articleFrames removeAllObjects];
+    }
+    
+    [self.articleFrames addObjectsFromArray:[[LJBDBTool sharedDB] getAllArticles]];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.collectionView reloadData];
+    });
 }
 
 

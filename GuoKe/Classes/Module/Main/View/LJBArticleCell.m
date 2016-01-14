@@ -14,6 +14,8 @@
 #import <Masonry.h>
 #import <UIImageView+WebCache.h>
 
+#define CellCornerRadii CGSizeMake(5, 5)
+
 
 @interface LJBArticleCell ()
 
@@ -41,57 +43,77 @@
     return self;
 }
 
-#pragma mark - 创建子控件
-- (void)setupSubviews {
-    
-    self.headImage.frame = _articleF.imageF;
-    
-    self.titleBgView.frame = _articleF.titleBgF;
-    
-    self.title.frame     = _articleF.titleF;
-    
-    self.line.frame      = _articleF.lineF;
-    
-    self.source.frame    = _articleF.sourceF;
-    
-    self.time.frame      = _articleF.timeF;
-}
-
+#pragma mark - 重写setter方法
 - (void)setArticleF:(LJBArticleFrame *)articleF {
     
     _articleF = articleF;
     
-    [self setupSubviews];
+    // 设置frame
+    [self setupSubviewsFrame];
     
-    [self.headImage sd_setImageWithURL:[NSURL URLWithString:articleF.article.headline_img_tb]];
+    // 设置内容
+    [self setupSubviewsData];
     
+    // 设置圆角
+    [self setCornerRadii:CellCornerRadii
+         roundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight
+                fromView:self.headImage];
+    
+    [self setCornerRadii:CellCornerRadii
+         roundingCorners:UIRectCornerBottomLeft
+                fromView:self.source];
+    
+    [self setCornerRadii:CellCornerRadii
+         roundingCorners:UIRectCornerBottomRight
+                fromView:self.time];
+}
+
+#pragma mark - 设置子控件frame
+- (void)setupSubviewsFrame {
+    
+    self.headImage.frame   = _articleF.imageF;
+    
+    self.titleBgView.frame = _articleF.titleBgF;
+    
+    self.title.frame       = _articleF.titleF;
+    
+    self.line.frame        = _articleF.lineF;
+    
+    self.source.frame      = _articleF.sourceF;
+    
+    self.time.frame        = _articleF.timeF;
+}
+
+#pragma mark - 设置子控件数据
+- (void)setupSubviewsData {
+    
+    // 文章图片
+    [self.headImage sd_setImageWithURL:[NSURL URLWithString:_articleF.article.headline_img_tb]];
+    
+    // 文章标题
     self.title.text = _articleF.article.title;
     
+    // 文章来源
     [self.source setTitle:_articleF.article.source_name forState:UIControlStateDisabled];
     [self.source setImage:[UIImage imageNamed:@"icon_source"] forState:UIControlStateDisabled];
     
+    // 文章挑选时间
     [self.time setTitle:_articleF.article.date_picked forState:UIControlStateDisabled];
     [self.time setImage:[UIImage imageNamed:@"icon_time"] forState:UIControlStateDisabled];
-    
-    NSLog(@"%@", _articleF.article.date_picked);
-    
-    // 设置圆角
-    [self setCornerRadii:CGSizeMake(5, 5) roundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight fromView:self.headImage];
-    [self setCornerRadii:CGSizeMake(5, 5) roundingCorners:UIRectCornerBottomLeft fromView:self.source];
-    [self setCornerRadii:CGSizeMake(5, 5) roundingCorners:UIRectCornerBottomRight fromView:self.time];
 }
+
 
 #pragma mark - private method
 - (void)setCornerRadii:(CGSize)size roundingCorners:(UIRectCorner)corner fromView:(UIView *)view {
     
-    UIBezierPath * path = [UIBezierPath bezierPathWithRoundedRect:view.bounds
+    UIBezierPath * path  = [UIBezierPath bezierPathWithRoundedRect:view.bounds
                                                 byRoundingCorners:corner
                                                       cornerRadii:size];
     CAShapeLayer * layer = [[CAShapeLayer alloc] init];
-    layer.frame = view.bounds;
-    layer.path = path.CGPath;
+    layer.frame          = view.bounds;
+    layer.path           = path.CGPath;
     
-    view.layer.mask = layer;
+    view.layer.mask      = layer;
 }
 
 

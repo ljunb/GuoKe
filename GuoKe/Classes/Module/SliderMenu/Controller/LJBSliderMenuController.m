@@ -16,11 +16,12 @@
 static NSString * const kSliderMenuCellIdentifier = @"LJBSliderMenuCell";
 
 @interface LJBSliderMenuController () <UITableViewDataSource, UITableViewDelegate>
-{
-    NSArray * _menuTitles;
-    NSArray * _menuImages;
-    UITableView * _tableView;
-}
+
+@property (nonatomic, strong) UITableView * tableView;
+
+@property (nonatomic, copy) NSArray * menuTitles;
+
+@property (nonatomic, copy) NSArray * menuImages;
 
 @end
 
@@ -29,8 +30,6 @@ static NSString * const kSliderMenuCellIdentifier = @"LJBSliderMenuCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self initData];
-    
     [self setupTableView];
     
     [self registerCell];
@@ -38,51 +37,30 @@ static NSString * const kSliderMenuCellIdentifier = @"LJBSliderMenuCell";
     self.view.backgroundColor = [UIColor whiteColor];
 }
 
-#pragma mark - 初始化数据
-- (void)initData {
-    
-    _menuTitles = @[@"首页", @"我的收藏", @"设置", @"与我们交流"];
-    
-    _menuImages = @[@"menu_home_press", @"menu_collection_press", @"menu_settings_press", @"menu_mail_press"];
-}
-
 #pragma mark - 初始化UITableView
 - (void)setupTableView {
     
-    _tableView = ({
-        UITableView * tableView         = [[UITableView alloc] init];
-        tableView.rowHeight             = UITableViewAutomaticDimension;
-        tableView.estimatedRowHeight    = 50;
-        tableView.dataSource            = self;
-        tableView.delegate              = self;
-        tableView.tableFooterView       = [[UIView alloc] init];
-        tableView.separatorStyle        = UITableViewCellSeparatorStyleNone;
-        tableView.backgroundColor       = [UIColor sliderViewBackgroundColor];
-        [self.view addSubview:tableView];
-        tableView;
-    });
-    
-    [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(20, 0, 0, 0));
     }];
 }
 
 #pragma mark - 注册cell
 - (void)registerCell {
-    [_tableView registerClass:[LJBSliderMenuCell class] forCellReuseIdentifier:kSliderMenuCellIdentifier];
+    [self.tableView registerClass:[LJBSliderMenuCell class] forCellReuseIdentifier:kSliderMenuCellIdentifier];
 }
 
 
 #pragma mark - UITableView Delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _menuTitles.count;
+    return self.menuTitles.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     LJBSliderMenuCell * cell = [tableView dequeueReusableCellWithIdentifier:kSliderMenuCellIdentifier forIndexPath:indexPath];
     
-    [cell configCellWithTitle:_menuTitles[indexPath.row] image:_menuImages[indexPath.row]];
+    [cell configCellWithTitle:self.menuTitles[indexPath.row] image:self.menuImages[indexPath.row]];
     
     return cell;
 }
@@ -100,6 +78,39 @@ static NSString * const kSliderMenuCellIdentifier = @"LJBSliderMenuCell";
     if ([self.delegate respondsToSelector:@selector(sliderMenuController:didSelectedItemAtIndex:)]) {
         [self.delegate sliderMenuController:self didSelectedItemAtIndex:indexPath.row];
     }
+}
+
+#pragma mark - getter
+- (UITableView *)tableView {
+    
+    if (!_tableView) {
+        _tableView                    = [[UITableView alloc] init];
+        _tableView.rowHeight          = UITableViewAutomaticDimension;
+        _tableView.estimatedRowHeight = 50;
+        _tableView.dataSource         = self;
+        _tableView.delegate           = self;
+        _tableView.tableFooterView    = [[UIView alloc] init];
+        _tableView.separatorStyle     = UITableViewCellSeparatorStyleNone;
+        _tableView.backgroundColor    = [UIColor sliderViewBackgroundColor];
+        [self.view addSubview:_tableView];
+    }
+    return _tableView;
+}
+
+- (NSArray *)menuTitles {
+    
+    if (!_menuTitles) {
+        _menuTitles = @[@"首页", @"我的收藏", @"设置", @"与我们交流"];
+    }
+    return _menuTitles;
+}
+
+- (NSArray *)menuImages {
+    
+    if (!_menuImages) {
+        _menuImages = @[@"menu_home_press", @"menu_collection_press", @"menu_settings_press", @"menu_mail_press"];
+    }
+    return _menuImages;
 }
 
 @end

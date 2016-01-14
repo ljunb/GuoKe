@@ -22,12 +22,15 @@ static CGFloat kBottomLineHeight                 = 2;
 
 
 @interface LJBSliderMenuCell ()
-{
-    UIImageView * _menuIcon;
-    UILabel * _menuTitle;
-    UIImageView * _indicatorIcon;
-    UIImageView * _bottomLine;
-}
+
+@property (nonatomic, strong) UIImageView * menuIcon;
+
+@property (nonatomic, strong) UILabel * menuTitle;
+
+@property (nonatomic, strong) UIImageView * indicatorIcon;
+
+@property (nonatomic, strong) UIImageView * bottomLine;
+
 @end
 
 @implementation LJBSliderMenuCell
@@ -45,14 +48,7 @@ static CGFloat kBottomLineHeight                 = 2;
 - (void)setupSubviews {
     
     // 菜单图片
-    _menuIcon = ({
-        UIImageView * menuIcon = [[UIImageView alloc] init];
-        menuIcon.tintColor = [UIColor whiteColor];
-        [self.contentView addSubview:menuIcon];
-        menuIcon;
-    });
-    
-    [_menuIcon mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.menuIcon mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.contentView.mas_top).offset(kMenuIconTopAndBottomMargin);
         make.bottom.equalTo(self.contentView.mas_bottom).offset(-kMenuIconTopAndBottomMargin);
         make.left.equalTo(self.contentView.mas_left).offset(kMenuIconLeftMargin);
@@ -60,39 +56,20 @@ static CGFloat kBottomLineHeight                 = 2;
     }];
     
     // 菜单标题
-    _menuTitle = ({
-        UILabel * title = [[UILabel alloc] init];
-        title.font = [UIFont boldSystemFontOfSize:16];
-        title.textColor = [UIColor whiteColor];
-        [self.contentView addSubview:title];
-        title;
-    });
-    
-    [_menuTitle mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.menuTitle mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.contentView);
         make.left.equalTo(_menuIcon.mas_right).offset(kMenuIconAndTitleSpace);
     }];
     
     // 右边箭头
-    _indicatorIcon = ({
-        UIImageView * indicatorIcon = [[UIImageView alloc] init];
-        [self.contentView addSubview:indicatorIcon];
-        indicatorIcon;
-    });
-    
-    [_indicatorIcon mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.indicatorIcon mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.contentView);
         make.right.equalTo(self.contentView.mas_right).offset(-(kViewDeckLeftSize + kMenuIconLeftMargin));
         make.size.mas_equalTo(CGSizeMake(kIndicatorWidthAndHeight, kIndicatorWidthAndHeight));
     }];
     
     // 底部黑线
-    _bottomLine = ({
-        UIImageView * bottomLine = [[UIImageView alloc] init];
-        [self.contentView addSubview:bottomLine];
-        bottomLine;
-    });
-    [_bottomLine mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.bottomLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.and.left.and.bottom.equalTo(self.contentView);
         make.height.equalTo(@(kBottomLineHeight));
     }];
@@ -100,13 +77,54 @@ static CGFloat kBottomLineHeight                 = 2;
 
 - (void)configCellWithTitle:(NSString *)title image:(NSString *)image {
     
-    _menuIcon.image = [UIImage imageNamed:image];
+    self.menuIcon.image      = [UIImage imageNamed:image];
     
-    _menuTitle.text = title;
+    self.menuTitle.text      = title;
     
-    _indicatorIcon.image = [UIImage imageNamed:@"menu_arrow_press"];
+    self.indicatorIcon.image = [UIImage imageNamed:@"menu_arrow_press"];
     
-    _bottomLine.image = [[UIImage imageNamed:@"menu_line"] stretchableImageWithLeftCapWidth:10 topCapHeight:1];
+    self.bottomLine.image    = [[UIImage imageNamed:@"menu_line"] stretchableImageWithLeftCapWidth:10
+                                                                                      topCapHeight:1];
+}
+
+#pragma mark - getter
+- (UIImageView *)menuIcon {
+    
+    if (!_menuIcon) {
+        _menuIcon           = [[UIImageView alloc] init];
+        _menuIcon.tintColor = [UIColor whiteColor];
+        [self.contentView addSubview:_menuIcon];
+    }
+    return _menuIcon;
+}
+
+- (UILabel *)menuTitle {
+    
+    if (!_menuTitle) {
+        _menuTitle           = [[UILabel alloc] init];
+        _menuTitle.font      = [UIFont boldSystemFontOfSize:16];
+        _menuTitle.textColor = [UIColor whiteColor];
+        [self.contentView addSubview:_menuTitle];
+    }
+    return _menuTitle;
+}
+
+- (UIImageView *)indicatorIcon {
+    
+    if (!_indicatorIcon) {
+        _indicatorIcon = [[UIImageView alloc] init];
+        [self.contentView addSubview:_indicatorIcon];
+    }
+    return _indicatorIcon;
+}
+
+- (UIImageView *)bottomLine {
+    
+    if (!_bottomLine) {
+        _bottomLine = [[UIImageView alloc] init];
+        [self.contentView addSubview:_bottomLine];
+    }
+    return _bottomLine;
 }
 
 @end

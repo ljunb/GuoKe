@@ -34,6 +34,7 @@
 		EC9D77841C44E4E1003C0D33 /* LJBRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D77831C44E4E1003C0D33 /* LJBRootController.m */; };
 		EC9D77871C44F2CD003C0D33 /* UIColor+LJBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D77861C44F2CD003C0D33 /* UIColor+LJBExtension.m */; };
 		EC9D778A1C454F3F003C0D33 /* LJBBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D77891C454F3F003C0D33 /* LJBBaseController.m */; };
+		ECEA112B1C47818B009BA5F0 /* LJBDBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = ECEA112A1C47818B009BA5F0 /* LJBDBTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,8 @@
 		EC9D77861C44F2CD003C0D33 /* UIColor+LJBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+LJBExtension.m"; sourceTree = "<group>"; };
 		EC9D77881C454F3F003C0D33 /* LJBBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBBaseController.h; sourceTree = "<group>"; };
 		EC9D77891C454F3F003C0D33 /* LJBBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBBaseController.m; sourceTree = "<group>"; };
+		ECEA11291C47818B009BA5F0 /* LJBDBTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBDBTool.h; sourceTree = "<group>"; };
+		ECEA112A1C47818B009BA5F0 /* LJBDBTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBDBTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -428,6 +431,8 @@
 			children = (
 				EC0CA36C1C46003200AADB7D /* LJBHTTPTool.h */,
 				EC0CA36D1C46003200AADB7D /* LJBHTTPTool.m */,
+				ECEA11291C47818B009BA5F0 /* LJBDBTool.h */,
+				ECEA112A1C47818B009BA5F0 /* LJBDBTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -662,6 +667,7 @@
 			files = (
 				EC9D77841C44E4E1003C0D33 /* LJBRootController.m in Sources */,
 				EC9D77711C44B83E003C0D33 /* LJBSliderMenuController.m in Sources */,
+				ECEA112B1C47818B009BA5F0 /* LJBDBTool.m in Sources */,
 				EC9D776A1C44B7CF003C0D33 /* main.m in Sources */,
 				EC0CA3741C46086B00AADB7D /* LJBArticleFrame.m in Sources */,
 				EC0CA3671C45FD0A00AADB7D /* LJBArticle.m in Sources */,

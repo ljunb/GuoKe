@@ -11,6 +11,50 @@
 
 @implementation LJBHTTPTool
 
++ (void)checkNetworkWithConnected:(void (^)())connected disconnected:(void (^)())disconnected {
+    
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    
+    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        
+        switch (status) {
+            case AFNetworkReachabilityStatusReachableViaWiFi:
+            case AFNetworkReachabilityStatusReachableViaWWAN:
+            {
+                if (connected) {
+                    connected();
+                }
+            }
+                break;
+            case AFNetworkReachabilityStatusNotReachable:
+            case AFNetworkReachabilityStatusUnknown:
+            {
+                if (disconnected) {
+                    disconnected();
+                }
+            }
+                break;
+        }
+    }];
+}
+
++ (BOOL)hasConnected {
+    
+    __block BOOL hasConnected = YES;
+    
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    
+    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        
+        if (status == AFNetworkReachabilityStatusNotReachable || status == AFNetworkReachabilityStatusUnknown) {
+            hasConnected = NO;
+        }
+        
+    }];
+    
+    return hasConnected;
+}
+
 + (void)get:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure {
     
     AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
@@ -31,5 +75,7 @@
     }];
     
 }
+
+
 
 @end

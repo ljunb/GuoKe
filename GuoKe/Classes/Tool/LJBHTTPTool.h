@@ -12,4 +12,13 @@
 
 + (void)get:(NSString *)url params:(NSDictionary *)params success:(void(^)(id response))success failure:(void(^)(NSError *error))failure;
 
+/**
+ *  检查网络连接状态
+ *
+ *  @return YES or NO
+ */
++ (BOOL)hasConnected;
+
++ (void)checkNetworkWithConnected:(void(^)())connected disconnected:(void(^)())disconnected;
+
 @end

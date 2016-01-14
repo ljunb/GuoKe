@@ -21,4 +21,9 @@
 
 @property (nonatomic, copy) NSString * date_created;
 
+/**
+ *  是否收藏
+ */
+@property (nonatomic, copy) NSString * favorite;
+
 @end
