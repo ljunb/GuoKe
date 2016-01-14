@@ -17,6 +17,7 @@
 		EC0CA37A1C4630D100AADB7D /* UIFont+LJBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0CA3791C4630D100AADB7D /* UIFont+LJBExtension.m */; };
 		EC0CA37D1C463E7600AADB7D /* LJBButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0CA37C1C463E7600AADB7D /* LJBButton.m */; };
 		EC0CA3801C463FD500AADB7D /* UIView+LJBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0CA37F1C463FD500AADB7D /* UIView+LJBExtension.m */; };
+		EC29A7E81C4741AA0079F547 /* NSDate+LJBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EC29A7E71C4741AA0079F547 /* NSDate+LJBExtension.m */; };
 		EC9D76DB1C44AF44003C0D33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9D76D91C44AF44003C0D33 /* Main.storyboard */; };
 		EC9D76DD1C44AF44003C0D33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC9D76DC1C44AF44003C0D33 /* Assets.xcassets */; };
 		EC9D76E01C44AF44003C0D33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9D76DE1C44AF44003C0D33 /* LaunchScreen.storyboard */; };
@@ -74,6 +75,8 @@
 		EC0CA37C1C463E7600AADB7D /* LJBButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBButton.m; sourceTree = "<group>"; };
 		EC0CA37E1C463FD500AADB7D /* UIView+LJBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LJBExtension.h"; sourceTree = "<group>"; };
 		EC0CA37F1C463FD500AADB7D /* UIView+LJBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LJBExtension.m"; sourceTree = "<group>"; };
+		EC29A7E61C4741AA0079F547 /* NSDate+LJBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+LJBExtension.h"; sourceTree = "<group>"; };
+		EC29A7E71C4741AA0079F547 /* NSDate+LJBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+LJBExtension.m"; sourceTree = "<group>"; };
 		EC9D76CD1C44AF44003C0D33 /* GuoKe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuoKe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC9D76DA1C44AF44003C0D33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC9D76DC1C44AF44003C0D33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -242,6 +245,8 @@
 				EC9D77861C44F2CD003C0D33 /* UIColor+LJBExtension.m */,
 				EC0CA3781C4630D100AADB7D /* UIFont+LJBExtension.h */,
 				EC0CA3791C4630D100AADB7D /* UIFont+LJBExtension.m */,
+				EC29A7E61C4741AA0079F547 /* NSDate+LJBExtension.h */,
+				EC29A7E71C4741AA0079F547 /* NSDate+LJBExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -669,6 +674,7 @@
 				EC9D77741C44B853003C0D33 /* LJBConfigController.m in Sources */,
 				EC9D77771C44B872003C0D33 /* LJBMainController.m in Sources */,
 				EC0CA36E1C46003200AADB7D /* LJBHTTPTool.m in Sources */,
+				EC29A7E81C4741AA0079F547 /* NSDate+LJBExtension.m in Sources */,
 				EC9D777D1C44E119003C0D33 /* LJBConnectionController.m in Sources */,
 				EC9D77801C44E12A003C0D33 /* LJBFavoriteController.m in Sources */,
 				EC9D778A1C454F3F003C0D33 /* LJBBaseController.m in Sources */,

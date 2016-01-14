@@ -70,8 +70,10 @@
     [self.source setTitle:_articleF.article.source_name forState:UIControlStateDisabled];
     [self.source setImage:[UIImage imageNamed:@"icon_source"] forState:UIControlStateDisabled];
     
-    [self.time setTitle:_articleF.article.source_name forState:UIControlStateDisabled];
+    [self.time setTitle:_articleF.article.date_picked forState:UIControlStateDisabled];
     [self.time setImage:[UIImage imageNamed:@"icon_time"] forState:UIControlStateDisabled];
+    
+    NSLog(@"%@", _articleF.article.date_picked);
     
     // 设置圆角
     [self setCornerRadii:CGSizeMake(5, 5) roundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight fromView:self.headImage];

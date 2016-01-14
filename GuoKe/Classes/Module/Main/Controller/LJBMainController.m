@@ -9,9 +9,12 @@
 #import "LJBMainController.h"
 #import "LJBArticle+LJBRequest.h"
 #import "LJBArticleFrame.h"
+#import "LJBArticle.h"
 #import "LJBArticleCell.h"
 #import "UIColor+LJBExtension.h"
+#import "LJBArticleParam.h"
 #import <Masonry.h>
+#import <MJRefresh.h>
 #import <CHTCollectionViewWaterfallLayout.h>
 
 static CGFloat const kLayoutSectionInset                = 10;
@@ -37,6 +40,8 @@ static NSString * const kLJBArticleCellIdentifier       = @"LJBArticleCell";
     
     [self registerCell];
     
+    [self addRefresh];
+    
     [self fetchLatestArticle];
 }
 
@@ -56,6 +61,27 @@ static NSString * const kLJBArticleCellIdentifier       = @"LJBArticleCell";
             forCellWithReuseIdentifier:kLJBArticleCellIdentifier];
 }
 
+#pragma mark - 添加上/拉刷新  
+- (void)addRefresh {
+    
+    // 下拉刷新
+    self.collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self fetchLatestArticle];
+    }];
+    
+    // 上拉加载更多
+    self.collectionView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
+        
+        // 取出当前最后一篇文章
+        LJBArticleFrame * lastArticleF = self.articleFrames.lastObject;
+        
+        // 参数模型
+        LJBArticleParam * param = [LJBArticleParam paramWithSincePickedDate:lastArticleF.article.date_created];
+        
+        [self fetchMoreArticleWithParam:param];
+    }];
+}
+
 #pragma mark - 请求最新精选文章
 - (void)fetchLatestArticle {
     
@@ -66,19 +92,13 @@ static NSString * const kLJBArticleCellIdentifier       = @"LJBArticleCell";
             [self.articleFrames removeAllObjects];
         }
         
-        NSArray * articleArr = (NSArray *)response;
-        
-        for (LJBArticle * article in articleArr) {
-            
-            LJBArticleFrame * articleF = [[LJBArticleFrame alloc] init];
-            articleF.article = article;
-            
-            [self.articleFrames addObject:articleF];
-        }
+        [self.articleFrames addObjectsFromArray:response];
         
         // 刷新视图
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.collectionView reloadData];
+            
+            [self.collectionView.mj_header endRefreshing];
         });
         
         // 缓存数据
@@ -87,6 +107,28 @@ static NSString * const kLJBArticleCellIdentifier       = @"LJBArticleCell";
         
         NSLog(@"Fetch articles failed : %@", error);
 
+        [self.collectionView.mj_header endRefreshing];
+    }];
+}
+
+#pragma mark - 请求更多精选文章
+- (void)fetchMoreArticleWithParam:(LJBArticleParam *)param {
+    
+    [LJBArticle fetchMoreArticleWithParam:param completionBlock:^(id response) {
+        
+        [self.articleFrames addObjectsFromArray:response];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.collectionView reloadData];
+            
+            [self.collectionView.mj_footer endRefreshing];
+        });
+        
+    } failureBlock:^(NSError *error) {
+        
+        NSLog(@"Fetch more articles failed : %@", error);
+        
+        [self.collectionView.mj_footer endRefreshing];
     }];
 }
 

@@ -10,6 +10,7 @@
 #import "LJBHTTPTool.h"
 #import "LJBArticle.h"
 #import "LJBArticleParam.h"
+#import "LJBArticleFrame.h"
 #import <MMProgressHUD.h>
 #import <YYModel.h>
 
@@ -28,11 +29,63 @@ static NSString * kArticleURL = @"http://apis.guokr.com/handpick/article.json";
     NSDictionary * paramDic = [param yy_modelToJSONObject];
     
     [LJBHTTPTool get:kArticleURL params:paramDic success:^(id response) {
+    
+        NSArray * resultArr = response[@"result"];
         
-        NSArray * articles = [NSArray yy_modelArrayWithClass:[LJBArticle class] json:response[@"result"]];
+        NSMutableArray * articleFrames = [NSMutableArray array];
         
+        for (NSDictionary * artDic in resultArr) {
+            
+            LJBArticle * article = [LJBArticle yy_modelWithDictionary:artDic];
+            
+            LJBArticleFrame * articleF = [LJBArticleFrame frameWithArticle:article];
+            
+            [articleFrames addObject:articleF];
+        }
+        
+        // 回传数据
         if (successBlock) {
-            successBlock(articles);
+            successBlock(articleFrames);
+        }
+        
+        [MMProgressHUD dismiss];
+
+        
+    } failure:^(NSError *error) {
+        
+        [MMProgressHUD dismissWithError:@"请检查网络"];
+        
+        if (failureBlock) {
+            failureBlock(error);
+        }
+    }];
+}
+
++ (void)fetchMoreArticleWithParam:(LJBArticleParam *)param completionBlock:(void (^)(id))successBlock failureBlock:(void (^)(NSError *))failureBlock {
+    
+    [MMProgressHUD setPresentationStyle:MMProgressHUDPresentationStyleFade];
+    [MMProgressHUD show];
+    
+    NSDictionary * paramDic = [param yy_modelToJSONObject];
+    
+    [LJBHTTPTool get:kArticleURL params:paramDic success:^(id response) {
+        
+        NSArray * resultArr = response[@"result"];
+        
+        NSMutableArray * articleFrames = [NSMutableArray array];
+        
+        for (NSDictionary * artDic in resultArr) {
+            
+            LJBArticle * article = [LJBArticle yy_modelWithDictionary:artDic];
+            
+            LJBArticleFrame * articleF = [LJBArticleFrame frameWithArticle:article];
+            
+            [articleFrames addObject:articleF];
+        }
+        
+        // 回传数据
+        if (successBlock) {
+            successBlock(articleFrames);
         }
         
         [MMProgressHUD dismiss];

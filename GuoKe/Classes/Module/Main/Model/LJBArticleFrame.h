@@ -13,8 +13,6 @@
 
 @class LJBArticle;
 
-
-
 @interface LJBArticleFrame : NSObject
 
 @property (nonatomic, strong) LJBArticle * article;
@@ -32,5 +30,8 @@
 @property (nonatomic, assign) CGRect timeF;
 
 @property (nonatomic, assign) CGSize cellSize;
+
+- (instancetype)initWithArticle:(LJBArticle *)article;
++ (instancetype)frameWithArticle:(LJBArticle *)article;
 
 @end

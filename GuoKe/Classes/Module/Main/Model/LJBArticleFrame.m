@@ -8,6 +8,7 @@
 
 #import "LJBArticleFrame.h"
 #import "LJBArticle.h"
+#import <YYModel.h>
 
 #define LJBScreenSize [UIScreen mainScreen].bounds.size
 #define ImageFinalWidth (LJBScreenSize.width - 10 * 3) / 2
@@ -23,6 +24,19 @@ static CGFloat const kTitleLeftMargin      = 5;
 static CGFloat const kSourceHeight         = 28;
 
 @implementation LJBArticleFrame
+
+- (instancetype)initWithArticle:(LJBArticle *)article {
+    
+    if (self = [super init]) {
+        self.article = article;
+    }
+    return self;
+}
+
++ (instancetype)frameWithArticle:(LJBArticle *)article {
+    return [[self alloc] initWithArticle:article];
+}
+
 
 - (void)setArticle:(LJBArticle *)article {
     

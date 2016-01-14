@@ -19,4 +19,6 @@
 
 @property (nonatomic, copy) NSString * date_picked;
 
+@property (nonatomic, copy) NSString * date_created;
+
 @end

@@ -19,4 +19,7 @@
 @property (nonatomic, copy) NSString * category;
 @property (nonatomic, copy) NSString * ad;
 
++ (instancetype)paramWithSincePickedDate:(NSString *)pickedDate;
+- (instancetype)initWithSincePickedDate:(NSString *)pickedDate;
+
 @end

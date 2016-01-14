@@ -22,4 +22,17 @@
     return self;
 }
 
++ (instancetype)paramWithSincePickedDate:(NSString *)pickedDate {
+    
+    return [[self alloc] initWithSincePickedDate:pickedDate];
+}
+
+- (instancetype)initWithSincePickedDate:(NSString *)pickedDate {
+    
+    if (self = [self init]) {
+        _since = pickedDate;
+    }
+    return self;
+}
+
 @end
