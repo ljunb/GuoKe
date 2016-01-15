@@ -77,11 +77,20 @@ static LJBDBTool * dbTool = nil;
 #pragma mark - 创建数据表
 - (void)createTable {
     
-    NSString * createSQL = @"create table if not exists t_article (id integer primary key autoincrement, title text, source_name text, headline_img_tb text, date_picked text, favorite text)";
+    // 缓存表
+    NSString * createSQL = @"create table if not exists t_article_cached (id integer primary key autoincrement, title text, source_name text, headline_img_tb text, date_picked text)";
     
     if ([_fmDataBase executeUpdate:createSQL]) {
         
-        NSLog(@"成功创建表t_article");
+        NSLog(@"成功创建缓存表t_article_cached");
+    }
+    
+    // 收藏表
+    NSString * likeSQL = @"create table if not exists t_article_like (id integer primary key autoincrement, article_id text, title text, source_name text, summary text, date_picked text)";
+    
+    if ([_fmDataBase executeUpdate:likeSQL]) {
+        
+        NSLog(@"成功创建收藏表t_article_like");
     }
     
 }
@@ -91,12 +100,12 @@ static LJBDBTool * dbTool = nil;
     
     LJBArticle * article = articleF.article;
     
-    NSString * insertSQL = @"insert into t_article (title, source_name, headline_img_tb, date_picked, favorite) values (?, ?, ?, ?, ?)";
+    NSString * insertSQL = @"insert into t_article_cached (title, source_name, headline_img_tb, date_picked) values (?, ?, ?, ?)";
     
     BOOL success;
     
     @synchronized(self) {
-        success = [_fmDataBase executeUpdate:insertSQL, article.title, article.source_name, article.headline_img_tb, article.date_picked, article.favorite];
+        success = [_fmDataBase executeUpdate:insertSQL, article.title, article.source_name, article.headline_img_tb, article.date_picked];
     }
     
     if (!success) {
@@ -107,7 +116,7 @@ static LJBDBTool * dbTool = nil;
 #pragma mark - 查询所有缓存数据
 - (NSArray *)getAllArticles {
     
-    NSString * querySQL = @"select * from t_article";
+    NSString * querySQL = @"select * from t_article_cached";
     
     FMResultSet * result;
     
@@ -124,7 +133,6 @@ static LJBDBTool * dbTool = nil;
         article.date_picked     = [result objectForColumnName:@"date_picked"];
         article.source_name     = [result objectForColumnName:@"source_name"];
         article.headline_img_tb = [result objectForColumnName:@"headline_img_tb"];
-        article.favorite        = [result objectForColumnName:@"favorite"];
         
         LJBArticleFrame * articleF = [[LJBArticleFrame alloc] init];
         articleF.article = article;
@@ -135,10 +143,23 @@ static LJBDBTool * dbTool = nil;
     return articleFs;
 }
 
+- (BOOL)isExistArticleWithID:(NSString *)article_id {
+    
+    NSString * querySQL = @"select * from t_article_like where article_id = ?";
+    
+    FMResultSet * result;
+    
+    @synchronized(self) {
+        result = [_fmDataBase executeQuery:querySQL, article_id];
+    }
+    
+    return [result next];
+}
+
 #pragma mark - 清空缓存数据
 - (void)removeAllAritcles {
     
-    NSString * deleteSQL = @"delete from t_article";
+    NSString * deleteSQL = @"delete from t_article_cached";
     
     BOOL success;
     
@@ -149,6 +170,67 @@ static LJBDBTool * dbTool = nil;
     if (!success) {
         NSLog(@"无法清空缓存数据！");
     }
+}
+
+#pragma mark - 收藏
+- (void)likeArticle:(LJBArticle *)article {
+    
+    
+    NSString * insertSQL = @"insert into t_article_like (article_id, title, source_name, summary, date_picked) values (?, ?, ?, ?, ?)";
+    
+    BOOL success;
+    
+    @synchronized(self) {
+        success = [_fmDataBase executeUpdate:insertSQL, article.articleID, article.title, article.source_name, article.summary, article.date_picked];
+    }
+    
+    if (!success) {
+        NSLog(@"收藏失败！");
+    }
+    
+    
+}
+
+#pragma mark - 取消收藏
+- (void)dislikeArticle:(LJBArticle *)article {
+    
+    NSString * deleteSQL = @"delete from t_article_like where article_id = ?";
+    
+    BOOL success;
+    
+    @synchronized(self) {
+        success = [_fmDataBase executeUpdate:deleteSQL, article.articleID];
+    }
+    
+    if (!success) {
+        NSLog(@"无法取消收藏！");
+    }
+}
+
+- (NSArray *)getAllLikeArticles {
+    
+    NSString * querySQL = @"select * from t_article_like";
+    
+    FMResultSet * result;
+    
+    @synchronized(self) {
+        result = [_fmDataBase executeQuery:querySQL];
+    }
+    
+    NSMutableArray * articles = [NSMutableArray array];
+    
+    while ([result next]) {
+        
+        LJBArticle * article    = [[LJBArticle alloc] init];
+        article.title           = [result objectForColumnName:@"title"];
+        article.date_picked     = [result objectForColumnName:@"date_picked"];
+        article.source_name     = [result objectForColumnName:@"source_name"];
+        article.summary         = [result objectForColumnName:@"summary"];
+        
+        [articles addObject:article];
+    }
+    
+    return articles;
 }
 
 @end

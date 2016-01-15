@@ -18,6 +18,8 @@
 		EC0CA37D1C463E7600AADB7D /* LJBButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0CA37C1C463E7600AADB7D /* LJBButton.m */; };
 		EC0CA3801C463FD500AADB7D /* UIView+LJBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0CA37F1C463FD500AADB7D /* UIView+LJBExtension.m */; };
 		EC29A7E81C4741AA0079F547 /* NSDate+LJBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EC29A7E71C4741AA0079F547 /* NSDate+LJBExtension.m */; };
+		EC689E7E1C4902ED00135F44 /* LJBFavoriteController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC689E7B1C4902ED00135F44 /* LJBFavoriteController.m */; };
+		EC689E811C49037400135F44 /* LJBLikeArticleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC689E801C49037400135F44 /* LJBLikeArticleCell.m */; };
 		EC6F88F41C4806D5002A7D60 /* LJBArticleInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6F88F31C4806D5002A7D60 /* LJBArticleInfoController.m */; };
 		EC6F88F71C48076C002A7D60 /* LJBNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6F88F61C48076C002A7D60 /* LJBNavigationController.m */; };
 		EC9C0B951C48856400DAD3A7 /* UIBarButtonItem+LJBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9C0B941C48856400DAD3A7 /* UIBarButtonItem+LJBExtension.m */; };
@@ -35,7 +37,6 @@
 		EC9D77771C44B872003C0D33 /* LJBMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D77761C44B872003C0D33 /* LJBMainController.m */; };
 		EC9D777A1C44BB49003C0D33 /* LJBSliderMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D77791C44BB49003C0D33 /* LJBSliderMenuCell.m */; };
 		EC9D777D1C44E119003C0D33 /* LJBConnectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D777C1C44E119003C0D33 /* LJBConnectionController.m */; };
-		EC9D77801C44E12A003C0D33 /* LJBFavoriteController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D777F1C44E12A003C0D33 /* LJBFavoriteController.m */; };
 		EC9D77841C44E4E1003C0D33 /* LJBRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D77831C44E4E1003C0D33 /* LJBRootController.m */; };
 		EC9D77871C44F2CD003C0D33 /* UIColor+LJBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D77861C44F2CD003C0D33 /* UIColor+LJBExtension.m */; };
 		ECEA112B1C47818B009BA5F0 /* LJBDBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = ECEA112A1C47818B009BA5F0 /* LJBDBTool.m */; };
@@ -82,6 +83,10 @@
 		EC0CA37F1C463FD500AADB7D /* UIView+LJBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LJBExtension.m"; sourceTree = "<group>"; };
 		EC29A7E61C4741AA0079F547 /* NSDate+LJBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+LJBExtension.h"; sourceTree = "<group>"; };
 		EC29A7E71C4741AA0079F547 /* NSDate+LJBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+LJBExtension.m"; sourceTree = "<group>"; };
+		EC689E7A1C4902ED00135F44 /* LJBFavoriteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBFavoriteController.h; sourceTree = "<group>"; };
+		EC689E7B1C4902ED00135F44 /* LJBFavoriteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBFavoriteController.m; sourceTree = "<group>"; };
+		EC689E7F1C49037400135F44 /* LJBLikeArticleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBLikeArticleCell.h; sourceTree = "<group>"; };
+		EC689E801C49037400135F44 /* LJBLikeArticleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBLikeArticleCell.m; sourceTree = "<group>"; };
 		EC6F88F21C4806D5002A7D60 /* LJBArticleInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBArticleInfoController.h; sourceTree = "<group>"; };
 		EC6F88F31C4806D5002A7D60 /* LJBArticleInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBArticleInfoController.m; sourceTree = "<group>"; };
 		EC6F88F51C48076C002A7D60 /* LJBNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBNavigationController.h; sourceTree = "<group>"; };
@@ -116,8 +121,6 @@
 		EC9D77791C44BB49003C0D33 /* LJBSliderMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBSliderMenuCell.m; sourceTree = "<group>"; };
 		EC9D777B1C44E119003C0D33 /* LJBConnectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBConnectionController.h; sourceTree = "<group>"; };
 		EC9D777C1C44E119003C0D33 /* LJBConnectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBConnectionController.m; sourceTree = "<group>"; };
-		EC9D777E1C44E12A003C0D33 /* LJBFavoriteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBFavoriteController.h; sourceTree = "<group>"; };
-		EC9D777F1C44E12A003C0D33 /* LJBFavoriteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBFavoriteController.m; sourceTree = "<group>"; };
 		EC9D77821C44E4E1003C0D33 /* LJBRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBRootController.h; sourceTree = "<group>"; };
 		EC9D77831C44E4E1003C0D33 /* LJBRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBRootController.m; sourceTree = "<group>"; };
 		EC9D77851C44F2CD003C0D33 /* UIColor+LJBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+LJBExtension.h"; sourceTree = "<group>"; };
@@ -176,6 +179,41 @@
 				EC0CA36A1C45FFA900AADB7D /* LJBArticle+LJBRequest.m */,
 			);
 			path = Request;
+			sourceTree = "<group>";
+		};
+		EC689E781C4902ED00135F44 /* Like */ = {
+			isa = PBXGroup;
+			children = (
+				EC689E791C4902ED00135F44 /* Controller */,
+				EC689E7C1C4902ED00135F44 /* Model */,
+				EC689E7D1C4902ED00135F44 /* View */,
+			);
+			path = Like;
+			sourceTree = "<group>";
+		};
+		EC689E791C4902ED00135F44 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EC689E7A1C4902ED00135F44 /* LJBFavoriteController.h */,
+				EC689E7B1C4902ED00135F44 /* LJBFavoriteController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EC689E7C1C4902ED00135F44 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EC689E7D1C4902ED00135F44 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EC689E7F1C49037400135F44 /* LJBLikeArticleCell.h */,
+				EC689E801C49037400135F44 /* LJBLikeArticleCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		EC9D76C41C44AF44003C0D33 = {
@@ -279,10 +317,10 @@
 		EC9D77531C44B7CF003C0D33 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				EC689E781C4902ED00135F44 /* Like */,
 				EC9D776B1C44B81E003C0D33 /* SliderMenu */,
 				EC9D77541C44B7CF003C0D33 /* Config */,
 				EC9D77581C44B7CF003C0D33 /* Connection */,
-				EC9D775C1C44B7CF003C0D33 /* Favorite */,
 				EC9D77601C44B7CF003C0D33 /* Main */,
 			);
 			path = Module;
@@ -348,39 +386,6 @@
 			sourceTree = "<group>";
 		};
 		EC9D775B1C44B7CF003C0D33 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		EC9D775C1C44B7CF003C0D33 /* Favorite */ = {
-			isa = PBXGroup;
-			children = (
-				EC9D775D1C44B7CF003C0D33 /* Controller */,
-				EC9D775E1C44B7CF003C0D33 /* Model */,
-				EC9D775F1C44B7CF003C0D33 /* View */,
-			);
-			path = Favorite;
-			sourceTree = "<group>";
-		};
-		EC9D775D1C44B7CF003C0D33 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				EC9D777E1C44E12A003C0D33 /* LJBFavoriteController.h */,
-				EC9D777F1C44E12A003C0D33 /* LJBFavoriteController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		EC9D775E1C44B7CF003C0D33 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		EC9D775F1C44B7CF003C0D33 /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -704,7 +709,8 @@
 				EC0CA36E1C46003200AADB7D /* LJBHTTPTool.m in Sources */,
 				EC29A7E81C4741AA0079F547 /* NSDate+LJBExtension.m in Sources */,
 				EC9D777D1C44E119003C0D33 /* LJBConnectionController.m in Sources */,
-				EC9D77801C44E12A003C0D33 /* LJBFavoriteController.m in Sources */,
+				EC689E7E1C4902ED00135F44 /* LJBFavoriteController.m in Sources */,
+				EC689E811C49037400135F44 /* LJBLikeArticleCell.m in Sources */,
 				EC0CA37A1C4630D100AADB7D /* UIFont+LJBExtension.m in Sources */,
 				EC9D77871C44F2CD003C0D33 /* UIColor+LJBExtension.m in Sources */,
 				EC9C0B951C48856400DAD3A7 /* UIBarButtonItem+LJBExtension.m in Sources */,

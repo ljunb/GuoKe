@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 @class LJBArticleFrame;
+@class LJBArticle;
 
 @interface LJBDBTool : NSObject
 
@@ -36,5 +37,27 @@
  *  清空所有缓存数据
  */
 - (void)removeAllAritcles;
+
+
+/**
+ *  是否已收藏
+ */
+- (BOOL)isExistArticleWithID:(NSString *)article_id;
+
+
+/**
+ *  收藏文章
+ */
+- (void)likeArticle:(LJBArticle *)article;
+
+/**
+ *  取消收藏
+ */
+- (void)dislikeArticle:(LJBArticle *)article;
+
+/**
+ *  获得所有收藏
+ */
+- (NSArray *)getAllLikeArticles;
 
 @end

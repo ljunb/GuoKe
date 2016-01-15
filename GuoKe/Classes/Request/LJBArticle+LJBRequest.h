@@ -32,4 +32,11 @@
                   completionBlock:(void (^)(id response))successBlock
                      failureBlock:(void (^)(NSError *error))failureBlock;
 
+/**
+ *  请求某篇文章数据
+ */
++ (void)fetchArticleDetailWithID:(NSString *)articleID
+                 completionBlock:(void (^)(id response))successBlock
+                    failureBlock:(void (^)(NSError *error))failureBlock;
+
 @end

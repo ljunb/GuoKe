@@ -11,7 +11,11 @@
 #import "UIView+LJBExtension.h"
 #import "LJBCommentView.h"
 #import "LJBArticleCommentListController.h"
+#import "LJBArticle.h"
+#import "LJBArticle+LJBRequest.h"
+#import "LJBDBTool.h"
 #import <Masonry.h>
+#import <MJRefresh.h>
 
 #define ArticleHTML @"http://jingxuan.guokr.com/pick/v2/%@/"
 
@@ -31,9 +35,18 @@
 
 @property (nonatomic, strong) UIWebView * webView;
 
+@property (nonatomic, strong) LJBArticle * article;
+
 @end
 
 @implementation LJBArticleInfoController
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    // 检查是否已收藏
+    [self checkArticleLikeStatus];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -44,7 +57,22 @@
     
     [self setupCommentView];
     
+    [self fetchArticleInfo];
+    
     self.view.backgroundColor = [UIColor whiteColor];
+}
+
+#pragma mark - 检查是否收藏
+- (void)checkArticleLikeStatus {
+    
+    if ([[LJBDBTool sharedDB] isExistArticleWithID:self.articleID]) {   // 已收藏过文章
+        
+        self.favoriteBtn.selected = YES;
+        
+    } else {
+        
+        self.favoriteBtn.selected = NO;
+    }
 }
 
 #pragma mark - 导航栏右边按钮数组
@@ -70,14 +98,10 @@
         make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 44, 0));
     }];
     
-    self.webView.backgroundColor = [UIColor redColor];
-    
-    NSString * urlStr = [NSString stringWithFormat:ArticleHTML, self.articleID];
-    NSURL * baseURL = [NSURL URLWithString:urlStr];
-    NSString * HTMLString = [NSString stringWithContentsOfURL:baseURL encoding:NSUTF8StringEncoding error:nil];
-    
-    [self.webView loadHTMLString:HTMLString baseURL:baseURL];
-    
+    // 下拉刷新
+    self.webView.scrollView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self.webView.scrollView.mj_header endRefreshing];
+    }];
 }
 
 #pragma mark - 创建评论view
@@ -95,6 +119,48 @@
     }];
 }
 
+- (void)fetchArticleInfo {
+    
+    [LJBArticle fetchArticleDetailWithID:self.articleID completionBlock:^(id response) {
+        
+        _article = (LJBArticle *)response;
+        
+        [self handleHTML];
+        
+    } failureBlock:^(NSError *error) {
+        NSLog(@"Fetch article info error : %@", error);
+    }];
+}
+
+#warning 未完成处理
+#pragma mark - 处理HTML
+- (void)handleHTML {
+    
+    // 图片属性
+    NSString * imageHTML = [NSString stringWithFormat:@"<img src=\"%@\" width = \"303\" height = \"180\">", _article.headline_img_tb];
+    
+    // 创建日期
+    NSDateFormatter * fmt = [[NSDateFormatter alloc] init];
+    fmt.dateFormat = @"yyyy-MM-dd HH:mm";
+    
+    NSDate * date = [NSDate dateWithTimeIntervalSince1970:[_article.date_created longLongValue]];
+    NSString * dateStr = [fmt stringFromDate:date];
+    
+    // <h1 style="font-family:verdana;">A heading</h1>
+//    <p style="font-family:arial;color:red;font-size:20px;">A paragraph.</p>
+    // 作者 . 日期
+    NSString * authorAndDate = [NSString stringWithFormat:@"%@ . %@", _article.author, dateStr];
+    
+//    NSString * authorHTML = [NSString stringWithFormat:@"<p style=\"font-family:arial;color:gray;font-size:20px;\">%@</p>", authorAndDate];
+
+    NSString * authorHTML = @"<div>测试</div>";
+    
+    // 最终拼接的HTML
+    NSString * finalHTML = [NSString stringWithFormat:@"%@%@%@", imageHTML, _article.content, authorHTML];
+    
+    [self.webView loadHTMLString:finalHTML baseURL:nil];
+}
+
 #pragma mark - Event response
 #pragma mark 分享
 - (void)didClickShareItem {
@@ -105,6 +171,17 @@
 - (void)didClickFavoriteItem {
     
     self.favoriteBtn.selected = !self.favoriteBtn.selected;
+    
+    if (self.favoriteBtn.selected) {    // 收藏
+        
+        [[LJBDBTool sharedDB] likeArticle:self.article];
+        
+    } else {                            // 取消收藏
+        
+        [[LJBDBTool sharedDB] dislikeArticle:self.article];
+    }
+    
+    NSLog(@"%@", [[LJBDBTool sharedDB] getAllLikeArticles]);
 }
 
 #pragma mark 评论

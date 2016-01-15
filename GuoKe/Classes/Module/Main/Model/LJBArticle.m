@@ -11,6 +11,7 @@
 
 @implementation LJBArticle
 
+
 + (NSDictionary *)modelCustomPropertyMapper {
     return @{ @"articleID" : @"id"};
 }

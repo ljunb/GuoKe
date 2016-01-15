@@ -100,4 +100,32 @@ static NSString * kArticleURL = @"http://apis.guokr.com/handpick/article.json";
     }];
 }
 
++ (void)fetchArticleDetailWithID:(NSString *)articleID completionBlock:(void (^)(id))successBlock failureBlock:(void (^)(NSError *))failureBlock {
+    
+    [MMProgressHUD setPresentationStyle:MMProgressHUDPresentationStyleFade];
+    [MMProgressHUD show];
+    
+    NSDictionary * param = @{ @"pick_id" : articleID};
+    
+    [LJBHTTPTool get:kArticleURL params:param success:^(id response) {
+        
+        NSArray * sourceArr = [NSArray yy_modelArrayWithClass:[LJBArticle class] json:response[@"result"]];
+        
+        // 回传数据
+        if (successBlock) {
+            successBlock(sourceArr.firstObject);
+        }
+        
+        [MMProgressHUD dismiss];
+        
+    } failure:^(NSError *error) {
+        
+        [MMProgressHUD dismissWithError:@"请检查网络"];
+        
+        if (failureBlock) {
+            failureBlock(error);
+        }
+    }];
+}
+
 @end
