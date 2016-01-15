@@ -103,6 +103,7 @@ typedef NS_ENUM(NSInteger, LJBControllerType) {
     [self.currentController.view removeFromSuperview];
     [self.currentController removeFromParentViewController];
     
+    UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController * viewController = nil;
     switch (index) {
         case LJBMainControllerType:
@@ -117,12 +118,13 @@ typedef NS_ENUM(NSInteger, LJBControllerType) {
             break;
         case LJBConfigControllerType:
         {
-            viewController = [[LJBConfigController alloc] init];
+            
+             viewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"LJBConfigController"];
         }
             break;
         case LJBConnectionControllerType:
         {
-            viewController = [[LJBConnectionController alloc] init];
+            viewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"LJBConnectionController"];
         }
             break;
     }

@@ -10,4 +10,6 @@
 
 @interface LJBArticleInfoController : UIViewController
 
+@property (nonatomic, copy) NSString * articleID;
+
 @end

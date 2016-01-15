@@ -28,22 +28,35 @@ NSString * const kLJBBaseControllerDidClickMenuItemNotification = @"LJBBaseContr
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
     
+    UIBarButtonItem * leftItem = nil;
+    
     if (self.viewControllers.count == 0) {   // push的是根视图
         
-        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self
-                                                                                   Action:@selector(didClickMenuItem)
-                                                                              normalImage:@"nav_menuBtn"
-                                                                          hightlightImage:@"nav_menuBtn_press"];
+        leftItem = [UIBarButtonItem itemWithTarget:self
+                                            Action:@selector(didClickMenuItem)
+                                       normalImage:@"nav_menuBtn"
+                                   hightlightImage:@"nav_menuBtn_press"];
         
     } else {
         
-        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self
-                                                                                   Action:@selector(didClickBackItem)
-                                                                              normalImage:@"nav_back"
-                                                                          hightlightImage:@"nav_back_press"];
+        leftItem = [UIBarButtonItem itemWithTarget:self
+                                            Action:@selector(didClickBackItem)
+                                       normalImage:@"nav_back"
+                                   hightlightImage:@"nav_back_press"];
+        
     }
+    viewController.navigationItem.leftBarButtonItems = [self fixSpaceWithItem:leftItem];
     
     [super pushViewController:viewController animated:animated];
+}
+
+#pragma mark - 解决左边导航栏空格过大
+- (NSArray *)fixSpaceWithItem:(UIBarButtonItem *)barItem {
+    
+    UIBarButtonItem * spaceLeftItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    spaceLeftItem.width = -15;
+    
+    return @[spaceLeftItem, barItem];
 }
 
 #pragma mark - 菜单按钮事件

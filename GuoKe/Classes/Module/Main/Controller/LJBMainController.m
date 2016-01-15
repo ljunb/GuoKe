@@ -167,7 +167,11 @@ static NSString * const kLJBArticleCellIdentifier       = @"LJBArticleCell";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
+    LJBArticleFrame * articleF = self.articleFrames[indexPath.item];
+    
     LJBArticleInfoController * articleInfoVC = [[LJBArticleInfoController alloc] init];
+    
+    articleInfoVC.articleID = articleF.article.articleID;
     
     [self.navigationController pushViewController:articleInfoVC animated:YES];
 }

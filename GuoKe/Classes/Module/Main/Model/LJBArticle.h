@@ -8,8 +8,11 @@
 
 
 #import <Foundation/Foundation.h>
+#import <YYModel.h>
 
-@interface LJBArticle : NSObject
+@interface LJBArticle : NSObject <YYModel>
+
+@property (nonatomic, copy) NSString * articleID;
 
 @property (nonatomic, copy) NSString * headline_img_tb;
 

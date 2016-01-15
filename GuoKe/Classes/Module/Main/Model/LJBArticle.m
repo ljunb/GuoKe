@@ -11,6 +11,10 @@
 
 @implementation LJBArticle
 
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{ @"articleID" : @"id"};
+}
+
 - (NSString *)date_picked {
 
     // 保存原始时间戳，用于请求更多文章数据

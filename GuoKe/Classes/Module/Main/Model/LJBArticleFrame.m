@@ -13,13 +13,10 @@
 #define LJBScreenSize [UIScreen mainScreen].bounds.size
 #define ImageFinalWidth (LJBScreenSize.width - 10 * 3) / 2
 
-static CGFloat const kImageDefaultWidth    = 288;
-static CGFloat const kImageDefaultHeight   = 192;
 static CGFloat const kImageAndTitleMargin  = 10;
 
 static CGFloat const kTitleMaxHeight       = 60;
 static CGFloat const kTitleLeftMargin      = 5;
-//static CGFloat const kTitleAndSourceMargin = 6;
 
 static CGFloat const kSourceHeight         = 28;
 
@@ -54,7 +51,8 @@ static CGFloat const kSourceHeight         = 28;
 #pragma mark - 图片frame
 - (void)configImageFrame {
     
-    CGFloat height  = ImageFinalWidth * kImageDefaultHeight / kImageDefaultWidth;
+    // 默认高度
+    CGFloat height = ImageFinalWidth;
     
     if ([_article.headline_img_tb rangeOfString:@"imageView2/1/"].location != NSNotFound) {
         

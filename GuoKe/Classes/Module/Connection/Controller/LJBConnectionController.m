@@ -7,6 +7,7 @@
 //
 
 #import "LJBConnectionController.h"
+#import "UIColor+LJBExtension.h"
 
 @interface LJBConnectionController ()
 
@@ -17,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor magentaColor];
+    self.view.backgroundColor = [UIColor articleCollectionViewBackgroundColor];
 }
 
 - (void)didReceiveMemoryWarning {

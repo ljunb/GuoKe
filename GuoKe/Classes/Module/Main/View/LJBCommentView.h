@@ -1,5 +1,5 @@
 //
-//  LJBConfigController.h
+//  LJBCommentView.h
 //  GuoKe
 //
 //  Created by CookieJ on 16/1/15.
@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LJBConfigController : UITableViewController
+@interface LJBCommentView : UIView
+
+
+
+- (instancetype)initWithHandleBlock:(void(^)())handleBlock;
 
 @end

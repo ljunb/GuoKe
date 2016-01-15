@@ -1,5 +1,5 @@
 //
-//  LJBConfigController.h
+//  LJBArticleCommentListController.h
 //  GuoKe
 //
 //  Created by CookieJ on 16/1/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LJBConfigController : UITableViewController
+@interface LJBArticleCommentListController : UIViewController
 
 @end

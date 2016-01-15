@@ -21,6 +21,9 @@
 		EC6F88F41C4806D5002A7D60 /* LJBArticleInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6F88F31C4806D5002A7D60 /* LJBArticleInfoController.m */; };
 		EC6F88F71C48076C002A7D60 /* LJBNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6F88F61C48076C002A7D60 /* LJBNavigationController.m */; };
 		EC9C0B951C48856400DAD3A7 /* UIBarButtonItem+LJBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9C0B941C48856400DAD3A7 /* UIBarButtonItem+LJBExtension.m */; };
+		EC9C0B981C4896DE00DAD3A7 /* LJBCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9C0B971C4896DE00DAD3A7 /* LJBCommentView.m */; };
+		EC9C0B9B1C48A47C00DAD3A7 /* LJBArticleCommentListController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9C0B9A1C48A47C00DAD3A7 /* LJBArticleCommentListController.m */; };
+		EC9C0BA41C48AAAE00DAD3A7 /* LJBConfigController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9C0BA21C48AAAE00DAD3A7 /* LJBConfigController.m */; };
 		EC9D76DB1C44AF44003C0D33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9D76D91C44AF44003C0D33 /* Main.storyboard */; };
 		EC9D76DD1C44AF44003C0D33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC9D76DC1C44AF44003C0D33 /* Assets.xcassets */; };
 		EC9D76E01C44AF44003C0D33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9D76DE1C44AF44003C0D33 /* LaunchScreen.storyboard */; };
@@ -29,7 +32,6 @@
 		EC9D77691C44B7CF003C0D33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D77661C44B7CF003C0D33 /* AppDelegate.m */; };
 		EC9D776A1C44B7CF003C0D33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D77671C44B7CF003C0D33 /* main.m */; };
 		EC9D77711C44B83E003C0D33 /* LJBSliderMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D77701C44B83E003C0D33 /* LJBSliderMenuController.m */; };
-		EC9D77741C44B853003C0D33 /* LJBConfigController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D77731C44B853003C0D33 /* LJBConfigController.m */; };
 		EC9D77771C44B872003C0D33 /* LJBMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D77761C44B872003C0D33 /* LJBMainController.m */; };
 		EC9D777A1C44BB49003C0D33 /* LJBSliderMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D77791C44BB49003C0D33 /* LJBSliderMenuCell.m */; };
 		EC9D777D1C44E119003C0D33 /* LJBConnectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D777C1C44E119003C0D33 /* LJBConnectionController.m */; };
@@ -86,6 +88,12 @@
 		EC6F88F61C48076C002A7D60 /* LJBNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBNavigationController.m; sourceTree = "<group>"; };
 		EC9C0B931C48856400DAD3A7 /* UIBarButtonItem+LJBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+LJBExtension.h"; sourceTree = "<group>"; };
 		EC9C0B941C48856400DAD3A7 /* UIBarButtonItem+LJBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+LJBExtension.m"; sourceTree = "<group>"; };
+		EC9C0B961C4896DE00DAD3A7 /* LJBCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBCommentView.h; sourceTree = "<group>"; };
+		EC9C0B971C4896DE00DAD3A7 /* LJBCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBCommentView.m; sourceTree = "<group>"; };
+		EC9C0B991C48A47C00DAD3A7 /* LJBArticleCommentListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBArticleCommentListController.h; sourceTree = "<group>"; };
+		EC9C0B9A1C48A47C00DAD3A7 /* LJBArticleCommentListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBArticleCommentListController.m; sourceTree = "<group>"; };
+		EC9C0BA11C48AAAE00DAD3A7 /* LJBConfigController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBConfigController.h; sourceTree = "<group>"; };
+		EC9C0BA21C48AAAE00DAD3A7 /* LJBConfigController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBConfigController.m; sourceTree = "<group>"; };
 		EC9D76CD1C44AF44003C0D33 /* GuoKe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuoKe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC9D76DA1C44AF44003C0D33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC9D76DC1C44AF44003C0D33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -102,8 +110,6 @@
 		EC9D77671C44B7CF003C0D33 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EC9D776F1C44B83E003C0D33 /* LJBSliderMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBSliderMenuController.h; sourceTree = "<group>"; };
 		EC9D77701C44B83E003C0D33 /* LJBSliderMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBSliderMenuController.m; sourceTree = "<group>"; };
-		EC9D77721C44B853003C0D33 /* LJBConfigController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBConfigController.h; sourceTree = "<group>"; };
-		EC9D77731C44B853003C0D33 /* LJBConfigController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBConfigController.m; sourceTree = "<group>"; };
 		EC9D77751C44B872003C0D33 /* LJBMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBMainController.h; sourceTree = "<group>"; };
 		EC9D77761C44B872003C0D33 /* LJBMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBMainController.m; sourceTree = "<group>"; };
 		EC9D77781C44BB49003C0D33 /* LJBSliderMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBSliderMenuCell.h; sourceTree = "<group>"; };
@@ -295,8 +301,8 @@
 		EC9D77551C44B7CF003C0D33 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				EC9D77721C44B853003C0D33 /* LJBConfigController.h */,
-				EC9D77731C44B853003C0D33 /* LJBConfigController.m */,
+				EC9C0BA11C48AAAE00DAD3A7 /* LJBConfigController.h */,
+				EC9C0BA21C48AAAE00DAD3A7 /* LJBConfigController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -398,6 +404,8 @@
 				EC9D77761C44B872003C0D33 /* LJBMainController.m */,
 				EC6F88F21C4806D5002A7D60 /* LJBArticleInfoController.h */,
 				EC6F88F31C4806D5002A7D60 /* LJBArticleInfoController.m */,
+				EC9C0B991C48A47C00DAD3A7 /* LJBArticleCommentListController.h */,
+				EC9C0B9A1C48A47C00DAD3A7 /* LJBArticleCommentListController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -422,6 +430,8 @@
 				EC0CA3761C460F5D00AADB7D /* LJBArticleCell.m */,
 				EC0CA37B1C463E7600AADB7D /* LJBButton.h */,
 				EC0CA37C1C463E7600AADB7D /* LJBButton.m */,
+				EC9C0B961C4896DE00DAD3A7 /* LJBCommentView.h */,
+				EC9C0B971C4896DE00DAD3A7 /* LJBCommentView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -682,13 +692,14 @@
 				EC0CA3741C46086B00AADB7D /* LJBArticleFrame.m in Sources */,
 				EC0CA3671C45FD0A00AADB7D /* LJBArticle.m in Sources */,
 				EC0CA3801C463FD500AADB7D /* UIView+LJBExtension.m in Sources */,
+				EC9C0B981C4896DE00DAD3A7 /* LJBCommentView.m in Sources */,
 				EC0CA3771C460F5D00AADB7D /* LJBArticleCell.m in Sources */,
 				EC6F88F71C48076C002A7D60 /* LJBNavigationController.m in Sources */,
+				EC9C0BA41C48AAAE00DAD3A7 /* LJBConfigController.m in Sources */,
 				EC0CA36B1C45FFA900AADB7D /* LJBArticle+LJBRequest.m in Sources */,
 				EC9D777A1C44BB49003C0D33 /* LJBSliderMenuCell.m in Sources */,
 				EC0CA37D1C463E7600AADB7D /* LJBButton.m in Sources */,
 				EC0CA3711C4604EF00AADB7D /* LJBArticleParam.m in Sources */,
-				EC9D77741C44B853003C0D33 /* LJBConfigController.m in Sources */,
 				EC9D77771C44B872003C0D33 /* LJBMainController.m in Sources */,
 				EC0CA36E1C46003200AADB7D /* LJBHTTPTool.m in Sources */,
 				EC29A7E81C4741AA0079F547 /* NSDate+LJBExtension.m in Sources */,
@@ -699,6 +710,7 @@
 				EC9C0B951C48856400DAD3A7 /* UIBarButtonItem+LJBExtension.m in Sources */,
 				EC9D77691C44B7CF003C0D33 /* AppDelegate.m in Sources */,
 				EC6F88F41C4806D5002A7D60 /* LJBArticleInfoController.m in Sources */,
+				EC9C0B9B1C48A47C00DAD3A7 /* LJBArticleCommentListController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
