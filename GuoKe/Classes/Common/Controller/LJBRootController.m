@@ -12,7 +12,7 @@
 #import "LJBConfigController.h"
 #import "LJBConnectionController.h"
 #import "LJBSliderMenuController.h"
-#import "LJBBaseController.h"
+#import "LJBNavigationController.h"
 #import "AppDelegate.h"
 #import <Masonry.h>
 #import <ViewDeck.h>
@@ -78,7 +78,7 @@ typedef NS_ENUM(NSInteger, LJBControllerType) {
     LJBMainController * mainVC = [[LJBMainController alloc] init];
     mainVC.title = self.controllerTitles.firstObject;
     
-    UINavigationController * unc = [[UINavigationController alloc] initWithRootViewController:mainVC];
+    LJBNavigationController * unc = [[LJBNavigationController alloc] initWithRootViewController:mainVC];
     [self.view addSubview:unc.view];
     [unc.view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view).insets(UIEdgeInsetsZero);
@@ -128,7 +128,7 @@ typedef NS_ENUM(NSInteger, LJBControllerType) {
     }
     
     viewController.title = self.controllerTitles[index];
-    UINavigationController * unc = [[UINavigationController alloc] initWithRootViewController:viewController];
+    LJBNavigationController * unc = [[LJBNavigationController alloc] initWithRootViewController:viewController];
     
     [self.view addSubview:unc.view];
     [self addChildViewController:unc];

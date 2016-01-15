@@ -1,8 +1,8 @@
 //
-//  LJBBaseController.h
+//  LJBNavigationController.h
 //  GuoKe
 //
-//  Created by 林俊炳 on 16/1/12.
+//  Created by CookieJ on 16/1/15.
 //  Copyright © 2016年 ljunb. All rights reserved.
 //
 
@@ -10,6 +10,6 @@
 
 extern NSString * const kLJBBaseControllerDidClickMenuItemNotification;
 
-@interface LJBBaseController : UIViewController
+@interface LJBNavigationController : UINavigationController
 
 @end

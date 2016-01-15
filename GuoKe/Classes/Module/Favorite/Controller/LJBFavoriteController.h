@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LJBBaseController.h"
 
-@interface LJBFavoriteController : LJBBaseController
+@interface LJBFavoriteController : UIViewController
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "LJBMainController.h"
+#import "LJBArticleInfoController.h"
 #import "LJBArticle+LJBRequest.h"
 #import "LJBArticleFrame.h"
 #import "LJBArticle.h"
@@ -162,6 +163,13 @@ static NSString * const kLJBArticleCellIdentifier       = @"LJBArticleCell";
     LJBArticleFrame * articleF = self.articleFrames[indexPath.item];
     
     return articleF.cellSize;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    LJBArticleInfoController * articleInfoVC = [[LJBArticleInfoController alloc] init];
+    
+    [self.navigationController pushViewController:articleInfoVC animated:YES];
 }
 
 #pragma mark - 检测网络

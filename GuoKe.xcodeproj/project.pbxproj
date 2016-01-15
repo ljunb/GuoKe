@@ -18,6 +18,9 @@
 		EC0CA37D1C463E7600AADB7D /* LJBButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0CA37C1C463E7600AADB7D /* LJBButton.m */; };
 		EC0CA3801C463FD500AADB7D /* UIView+LJBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0CA37F1C463FD500AADB7D /* UIView+LJBExtension.m */; };
 		EC29A7E81C4741AA0079F547 /* NSDate+LJBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EC29A7E71C4741AA0079F547 /* NSDate+LJBExtension.m */; };
+		EC6F88F41C4806D5002A7D60 /* LJBArticleInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6F88F31C4806D5002A7D60 /* LJBArticleInfoController.m */; };
+		EC6F88F71C48076C002A7D60 /* LJBNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6F88F61C48076C002A7D60 /* LJBNavigationController.m */; };
+		EC9C0B951C48856400DAD3A7 /* UIBarButtonItem+LJBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9C0B941C48856400DAD3A7 /* UIBarButtonItem+LJBExtension.m */; };
 		EC9D76DB1C44AF44003C0D33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9D76D91C44AF44003C0D33 /* Main.storyboard */; };
 		EC9D76DD1C44AF44003C0D33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC9D76DC1C44AF44003C0D33 /* Assets.xcassets */; };
 		EC9D76E01C44AF44003C0D33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9D76DE1C44AF44003C0D33 /* LaunchScreen.storyboard */; };
@@ -33,7 +36,6 @@
 		EC9D77801C44E12A003C0D33 /* LJBFavoriteController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D777F1C44E12A003C0D33 /* LJBFavoriteController.m */; };
 		EC9D77841C44E4E1003C0D33 /* LJBRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D77831C44E4E1003C0D33 /* LJBRootController.m */; };
 		EC9D77871C44F2CD003C0D33 /* UIColor+LJBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D77861C44F2CD003C0D33 /* UIColor+LJBExtension.m */; };
-		EC9D778A1C454F3F003C0D33 /* LJBBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D77891C454F3F003C0D33 /* LJBBaseController.m */; };
 		ECEA112B1C47818B009BA5F0 /* LJBDBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = ECEA112A1C47818B009BA5F0 /* LJBDBTool.m */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +80,12 @@
 		EC0CA37F1C463FD500AADB7D /* UIView+LJBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LJBExtension.m"; sourceTree = "<group>"; };
 		EC29A7E61C4741AA0079F547 /* NSDate+LJBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+LJBExtension.h"; sourceTree = "<group>"; };
 		EC29A7E71C4741AA0079F547 /* NSDate+LJBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+LJBExtension.m"; sourceTree = "<group>"; };
+		EC6F88F21C4806D5002A7D60 /* LJBArticleInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBArticleInfoController.h; sourceTree = "<group>"; };
+		EC6F88F31C4806D5002A7D60 /* LJBArticleInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBArticleInfoController.m; sourceTree = "<group>"; };
+		EC6F88F51C48076C002A7D60 /* LJBNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBNavigationController.h; sourceTree = "<group>"; };
+		EC6F88F61C48076C002A7D60 /* LJBNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBNavigationController.m; sourceTree = "<group>"; };
+		EC9C0B931C48856400DAD3A7 /* UIBarButtonItem+LJBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+LJBExtension.h"; sourceTree = "<group>"; };
+		EC9C0B941C48856400DAD3A7 /* UIBarButtonItem+LJBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+LJBExtension.m"; sourceTree = "<group>"; };
 		EC9D76CD1C44AF44003C0D33 /* GuoKe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuoKe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC9D76DA1C44AF44003C0D33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC9D76DC1C44AF44003C0D33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -108,8 +116,6 @@
 		EC9D77831C44E4E1003C0D33 /* LJBRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBRootController.m; sourceTree = "<group>"; };
 		EC9D77851C44F2CD003C0D33 /* UIColor+LJBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+LJBExtension.h"; sourceTree = "<group>"; };
 		EC9D77861C44F2CD003C0D33 /* UIColor+LJBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+LJBExtension.m"; sourceTree = "<group>"; };
-		EC9D77881C454F3F003C0D33 /* LJBBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBBaseController.h; sourceTree = "<group>"; };
-		EC9D77891C454F3F003C0D33 /* LJBBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBBaseController.m; sourceTree = "<group>"; };
 		ECEA11291C47818B009BA5F0 /* LJBDBTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBDBTool.h; sourceTree = "<group>"; };
 		ECEA112A1C47818B009BA5F0 /* LJBDBTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBDBTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -250,6 +256,8 @@
 				EC0CA3791C4630D100AADB7D /* UIFont+LJBExtension.m */,
 				EC29A7E61C4741AA0079F547 /* NSDate+LJBExtension.h */,
 				EC29A7E71C4741AA0079F547 /* NSDate+LJBExtension.m */,
+				EC9C0B931C48856400DAD3A7 /* UIBarButtonItem+LJBExtension.h */,
+				EC9C0B941C48856400DAD3A7 /* UIBarButtonItem+LJBExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -388,6 +396,8 @@
 			children = (
 				EC9D77751C44B872003C0D33 /* LJBMainController.h */,
 				EC9D77761C44B872003C0D33 /* LJBMainController.m */,
+				EC6F88F21C4806D5002A7D60 /* LJBArticleInfoController.h */,
+				EC6F88F31C4806D5002A7D60 /* LJBArticleInfoController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -477,8 +487,8 @@
 			children = (
 				EC9D77821C44E4E1003C0D33 /* LJBRootController.h */,
 				EC9D77831C44E4E1003C0D33 /* LJBRootController.m */,
-				EC9D77881C454F3F003C0D33 /* LJBBaseController.h */,
-				EC9D77891C454F3F003C0D33 /* LJBBaseController.m */,
+				EC6F88F51C48076C002A7D60 /* LJBNavigationController.h */,
+				EC6F88F61C48076C002A7D60 /* LJBNavigationController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -673,6 +683,7 @@
 				EC0CA3671C45FD0A00AADB7D /* LJBArticle.m in Sources */,
 				EC0CA3801C463FD500AADB7D /* UIView+LJBExtension.m in Sources */,
 				EC0CA3771C460F5D00AADB7D /* LJBArticleCell.m in Sources */,
+				EC6F88F71C48076C002A7D60 /* LJBNavigationController.m in Sources */,
 				EC0CA36B1C45FFA900AADB7D /* LJBArticle+LJBRequest.m in Sources */,
 				EC9D777A1C44BB49003C0D33 /* LJBSliderMenuCell.m in Sources */,
 				EC0CA37D1C463E7600AADB7D /* LJBButton.m in Sources */,
@@ -683,10 +694,11 @@
 				EC29A7E81C4741AA0079F547 /* NSDate+LJBExtension.m in Sources */,
 				EC9D777D1C44E119003C0D33 /* LJBConnectionController.m in Sources */,
 				EC9D77801C44E12A003C0D33 /* LJBFavoriteController.m in Sources */,
-				EC9D778A1C454F3F003C0D33 /* LJBBaseController.m in Sources */,
 				EC0CA37A1C4630D100AADB7D /* UIFont+LJBExtension.m in Sources */,
 				EC9D77871C44F2CD003C0D33 /* UIColor+LJBExtension.m in Sources */,
+				EC9C0B951C48856400DAD3A7 /* UIBarButtonItem+LJBExtension.m in Sources */,
 				EC9D77691C44B7CF003C0D33 /* AppDelegate.m in Sources */,
+				EC6F88F41C4806D5002A7D60 /* LJBArticleInfoController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
