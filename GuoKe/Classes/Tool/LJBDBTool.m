@@ -78,11 +78,11 @@ static LJBDBTool * dbTool = nil;
 - (void)createTable {
     
     // 缓存表
-    NSString * createSQL = @"create table if not exists t_article_cached (id integer primary key autoincrement, title text, source_name text, headline_img_tb text, date_picked text)";
+    NSString * createSQL = @"create table if not exists t_article_cach (id integer primary key autoincrement, article_id text, title text, source_name text, headline_img_tb text, date_picked text)";
     
     if ([_fmDataBase executeUpdate:createSQL]) {
         
-        NSLog(@"成功创建缓存表t_article_cached");
+        NSLog(@"成功创建缓存表t_article_cach");
     }
     
     // 收藏表
@@ -100,12 +100,12 @@ static LJBDBTool * dbTool = nil;
     
     LJBArticle * article = articleF.article;
     
-    NSString * insertSQL = @"insert into t_article_cached (title, source_name, headline_img_tb, date_picked) values (?, ?, ?, ?)";
+    NSString * insertSQL = @"insert into t_article_cach (article_id, title, source_name, headline_img_tb, date_picked) values (?, ?, ?, ?, ?)";
     
     BOOL success;
     
     @synchronized(self) {
-        success = [_fmDataBase executeUpdate:insertSQL, article.title, article.source_name, article.headline_img_tb, article.date_picked];
+        success = [_fmDataBase executeUpdate:insertSQL, article.articleID, article.title, article.source_name, article.headline_img_tb, article.date_picked];
     }
     
     if (!success) {
@@ -116,7 +116,7 @@ static LJBDBTool * dbTool = nil;
 #pragma mark - 查询所有缓存数据
 - (NSArray *)getAllArticles {
     
-    NSString * querySQL = @"select * from t_article_cached";
+    NSString * querySQL = @"select * from t_article_cach";
     
     FMResultSet * result;
     
@@ -129,6 +129,7 @@ static LJBDBTool * dbTool = nil;
     while ([result next]) {
         
         LJBArticle * article    = [[LJBArticle alloc] init];
+        article.articleID       = [result objectForColumnName:@"article_id"];
         article.title           = [result objectForColumnName:@"title"];
         article.date_picked     = [result objectForColumnName:@"date_picked"];
         article.source_name     = [result objectForColumnName:@"source_name"];
@@ -159,7 +160,7 @@ static LJBDBTool * dbTool = nil;
 #pragma mark - 清空缓存数据
 - (void)removeAllAritcles {
     
-    NSString * deleteSQL = @"delete from t_article_cached";
+    NSString * deleteSQL = @"delete from t_article_cach";
     
     BOOL success;
     
