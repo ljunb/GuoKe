@@ -19,7 +19,7 @@
 
 #define ArticleHTML @"http://jingxuan.guokr.com/pick/v2/%@/"
 
-@interface LJBArticleInfoController ()
+@interface LJBArticleInfoController () <LJBCommentViewDelegate>
 /**
  *  分享
  */
@@ -108,17 +108,23 @@
 - (void)setupCommentView {
     
     // 带回调block的初始化方法
-    LJBCommentView * comment = [[LJBCommentView alloc] initWithHandleBlock:^{
-        NSLog(@"-----");
-    }];
-    
+    LJBCommentView * comment = [[LJBCommentView alloc] init];
+    comment.delegate = self;
     [self.view addSubview:comment];
+    
     [comment mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.and.bottom.and.right.equalTo(self.view);
         make.height.equalTo(@44);
     }];
 }
 
+#pragma mark - LJBCommentViewDelegate
+- (void)commentViewDidClick:(LJBCommentView *)commentView {
+    
+    NSLog(@"点击了评论view");
+}
+
+#pragma mark - 获取文章数据
 - (void)fetchArticleInfo {
     
     [LJBArticle fetchArticleDetailWithID:self.articleID completionBlock:^(id response) {
@@ -131,6 +137,9 @@
         NSLog(@"Fetch article info error : %@", error);
     }];
 }
+
+
+#pragma mark - Event response
 
 #warning 未完成处理
 #pragma mark - 处理HTML
@@ -161,7 +170,6 @@
     [self.webView loadHTMLString:finalHTML baseURL:nil];
 }
 
-#pragma mark - Event response
 #pragma mark 分享
 - (void)didClickShareItem {
     NSLog(@"click share item");

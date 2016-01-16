@@ -8,10 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@class LJBCommentView;
+
+@protocol LJBCommentViewDelegate <NSObject>
+
+- (void)commentViewDidClick:(LJBCommentView *)commentView;
+
+@end
+
+
 @interface LJBCommentView : UIView
 
-
-
-- (instancetype)initWithHandleBlock:(void(^)())handleBlock;
+@property (nonatomic, weak) id<LJBCommentViewDelegate> delegate;
 
 @end

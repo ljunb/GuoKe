@@ -52,8 +52,7 @@ static NSString * const kLJBLikeArticleCellIdentifier = @"LJBLikeArticleCell";
 #pragma mark - 注册cell
 - (void)registerCell {
     
-    [self.tableView registerClass:[LJBLikeArticleCell class]
-           forCellReuseIdentifier:kLJBLikeArticleCellIdentifier];
+    [self.tableView registerClass:[LJBLikeArticleCell class] forCellReuseIdentifier:kLJBLikeArticleCellIdentifier];
 }
 
 #pragma mark - 读取所有收藏的文章
@@ -62,8 +61,17 @@ static NSString * const kLJBLikeArticleCellIdentifier = @"LJBLikeArticleCell";
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
     
         // 读取数据
-        self.artitles = [[LJBDBTool sharedDB] getAllLikeArticles];
+        NSArray * dbDatas = [[LJBDBTool sharedDB] getAllLikeArticles];
     
+        // 将文章数组按时间降序排序
+        self.artitles = [dbDatas sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+           
+            LJBArticle * article1 = (LJBArticle *)obj1;
+            LJBArticle * article2 = (LJBArticle *)obj2;
+            
+            return [article2.date_picked compare:article1.date_picked];
+        }];
+        
         // 主线程更新UI
         dispatch_async(dispatch_get_main_queue(), ^{
             
@@ -98,6 +106,7 @@ static NSString * const kLJBLikeArticleCellIdentifier = @"LJBLikeArticleCell";
     
     [self.navigationController pushViewController:articleInfoVC animated:YES];
 }
+
 
 #pragma mark - getter
 - (UITableView *)tableView {

@@ -32,28 +32,16 @@
         [self.comment mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self).insets(UIEdgeInsetsMake(6, 12, 6, 12));
         }];
-        
-        
-    }
-    return self;
-}
-
-#pragma mark - 带操作block的初始化方法
-- (instancetype)initWithHandleBlock:(void (^)())handleBlock {
-    
-    if (self = [super init]) {
-        
-        _ClickedBlock = handleBlock;
     }
     return self;
 }
 
 #pragma mark - 点击事件
 - (void)didClickComment {
-    
-    // 调用block
-    if (self.ClickedBlock) {
-        self.ClickedBlock();
+
+    // 通知代理
+    if ([self.delegate respondsToSelector:@selector(commentViewDidClick:)]) {
+        [self.delegate commentViewDidClick:self];
     }
 }
 

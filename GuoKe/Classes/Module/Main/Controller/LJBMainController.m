@@ -84,7 +84,7 @@ static NSString * const kLJBArticleCellIdentifier       = @"LJBArticleCell";
         LJBArticleFrame * lastArticleF = self.articleFrames.lastObject;
         
         // 参数模型
-        LJBArticleParam * param = [LJBArticleParam paramWithSincePickedDate:lastArticleF.article.sourcePickedDate];
+        LJBArticleParam * param = [LJBArticleParam paramWithSincePickedDate:lastArticleF.article.date_picked];
         
         [self fetchMoreArticleWithParam:param];
     }];
@@ -179,6 +179,7 @@ static NSString * const kLJBArticleCellIdentifier       = @"LJBArticleCell";
 #pragma mark - 检测网络
 - (void)checkNetwork {
     
+
     [LJBHTTPTool checkNetworkWithConnected:^{
         
         // 当前网络连接正常，获取最新数据
@@ -189,6 +190,7 @@ static NSString * const kLJBArticleCellIdentifier       = @"LJBArticleCell";
         // 当前无网络，从数据库缓存中读取数据
         [self getCachedArticle];
     }];
+    
 }
 
 #pragma mark - 缓存数据

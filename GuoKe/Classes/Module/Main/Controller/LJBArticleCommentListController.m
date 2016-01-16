@@ -10,7 +10,7 @@
 #import "LJBCommentView.h"
 #import <Masonry.h>
 
-@interface LJBArticleCommentListController ()
+@interface LJBArticleCommentListController () <LJBCommentViewDelegate>
 
 @end
 
@@ -28,15 +28,19 @@
 - (void)setupCommentView {
     
     // 带回调block的初始化方法
-    LJBCommentView * comment = [[LJBCommentView alloc] initWithHandleBlock:^{
-        NSLog(@"=====");
-    }];
-    
+    LJBCommentView * comment = [[LJBCommentView alloc] init];
+    comment.delegate = self;
     [self.view addSubview:comment];
+    
     [comment mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.and.bottom.and.right.equalTo(self.view);
         make.height.equalTo(@44);
     }];
+}
+
+#pragma mark - LJBCommentViewDelegate
+- (void)commentViewDidClick:(LJBCommentView *)commentView {
+    NSLog(@"点击了评论列表评论view");
 }
 
 @end

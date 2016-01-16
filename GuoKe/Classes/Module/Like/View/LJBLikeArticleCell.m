@@ -9,6 +9,7 @@
 #import "LJBLikeArticleCell.h"
 #import "LJBArticle.h"
 #import "LJBButton.h"
+#import "LJBDateTool.h"
 #import <Masonry.h>
 
 static CGFloat const kTitleTopPadding  = 15;
@@ -88,7 +89,8 @@ static CGFloat const kTitleAndSummarySpacing = 15;
     [self.source setImage:[UIImage imageNamed:@"icon_source"] forState:UIControlStateDisabled];
     
     // 文章挑选时间
-    [self.time setTitle:article.date_picked forState:UIControlStateDisabled];
+    NSString * customDate = [LJBDateTool customDateWithOriginDateString:article.date_picked];
+    [self.time setTitle:customDate forState:UIControlStateDisabled];
     [self.time setImage:[UIImage imageNamed:@"icon_time"] forState:UIControlStateDisabled];
 }
 

@@ -17,6 +17,7 @@
 		EC0CA37A1C4630D100AADB7D /* UIFont+LJBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0CA3791C4630D100AADB7D /* UIFont+LJBExtension.m */; };
 		EC0CA37D1C463E7600AADB7D /* LJBButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0CA37C1C463E7600AADB7D /* LJBButton.m */; };
 		EC0CA3801C463FD500AADB7D /* UIView+LJBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0CA37F1C463FD500AADB7D /* UIView+LJBExtension.m */; };
+		EC12BDF71C4A525C0053ACB4 /* LJBDateTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EC12BDF61C4A525C0053ACB4 /* LJBDateTool.m */; };
 		EC29A7E81C4741AA0079F547 /* NSDate+LJBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EC29A7E71C4741AA0079F547 /* NSDate+LJBExtension.m */; };
 		EC689E7E1C4902ED00135F44 /* LJBFavoriteController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC689E7B1C4902ED00135F44 /* LJBFavoriteController.m */; };
 		EC689E811C49037400135F44 /* LJBLikeArticleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC689E801C49037400135F44 /* LJBLikeArticleCell.m */; };
@@ -81,6 +82,8 @@
 		EC0CA37C1C463E7600AADB7D /* LJBButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBButton.m; sourceTree = "<group>"; };
 		EC0CA37E1C463FD500AADB7D /* UIView+LJBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LJBExtension.h"; sourceTree = "<group>"; };
 		EC0CA37F1C463FD500AADB7D /* UIView+LJBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LJBExtension.m"; sourceTree = "<group>"; };
+		EC12BDF51C4A525C0053ACB4 /* LJBDateTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBDateTool.h; sourceTree = "<group>"; };
+		EC12BDF61C4A525C0053ACB4 /* LJBDateTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBDateTool.m; sourceTree = "<group>"; };
 		EC29A7E61C4741AA0079F547 /* NSDate+LJBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+LJBExtension.h"; sourceTree = "<group>"; };
 		EC29A7E71C4741AA0079F547 /* NSDate+LJBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+LJBExtension.m"; sourceTree = "<group>"; };
 		EC689E7A1C4902ED00135F44 /* LJBFavoriteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBFavoriteController.h; sourceTree = "<group>"; };
@@ -458,6 +461,8 @@
 				EC0CA36D1C46003200AADB7D /* LJBHTTPTool.m */,
 				ECEA11291C47818B009BA5F0 /* LJBDBTool.h */,
 				ECEA112A1C47818B009BA5F0 /* LJBDBTool.m */,
+				EC12BDF51C4A525C0053ACB4 /* LJBDateTool.h */,
+				EC12BDF61C4A525C0053ACB4 /* LJBDateTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -702,6 +707,7 @@
 				EC6F88F71C48076C002A7D60 /* LJBNavigationController.m in Sources */,
 				EC9C0BA41C48AAAE00DAD3A7 /* LJBConfigController.m in Sources */,
 				EC0CA36B1C45FFA900AADB7D /* LJBArticle+LJBRequest.m in Sources */,
+				EC12BDF71C4A525C0053ACB4 /* LJBDateTool.m in Sources */,
 				EC9D777A1C44BB49003C0D33 /* LJBSliderMenuCell.m in Sources */,
 				EC0CA37D1C463E7600AADB7D /* LJBButton.m in Sources */,
 				EC0CA3711C4604EF00AADB7D /* LJBArticleParam.m in Sources */,

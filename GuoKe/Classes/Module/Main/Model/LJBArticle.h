@@ -45,10 +45,4 @@
 
 @property (nonatomic, copy) NSString * content;
 
-/**
- *  保存挑选时间原始时间戳
- */
-@property (nonatomic, copy) NSString * sourcePickedDate;
-
-
 @end
