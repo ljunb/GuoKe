@@ -222,6 +222,7 @@ static LJBDBTool * dbTool = nil;
     while ([result next]) {
         
         LJBArticle * article    = [[LJBArticle alloc] init];
+        article.articleID       = [result objectForColumnName:@"article_id"];
         article.title           = [result objectForColumnName:@"title"];
         article.date_picked     = [result objectForColumnName:@"date_picked"];
         article.source_name     = [result objectForColumnName:@"source_name"];

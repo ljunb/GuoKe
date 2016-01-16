@@ -10,9 +10,10 @@
 #import "LJBLikeArticleCell.h"
 #import "LJBArticle.h"
 #import "LJBDBTool.h"
+#import "LJBArticleInfoController.h"
 #import <Masonry.h>
 
-static NSString * const kLJBLikeArticleCellIdentifier = @"LJBLikeArticleCell.h";
+static NSString * const kLJBLikeArticleCellIdentifier = @"LJBLikeArticleCell";
 
 @interface LJBFavoriteController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -24,6 +25,12 @@ static NSString * const kLJBLikeArticleCellIdentifier = @"LJBLikeArticleCell.h";
 
 @implementation LJBFavoriteController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self getAllLikeArticles];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -32,8 +39,6 @@ static NSString * const kLJBLikeArticleCellIdentifier = @"LJBLikeArticleCell.h";
     [self setupTableView];
     
     [self registerCell];
-    
-    [self getAllLikeArticles];
 }
 
 #pragma mark - 适配UITableView
@@ -81,6 +86,17 @@ static NSString * const kLJBLikeArticleCellIdentifier = @"LJBLikeArticleCell.h";
     [cell configCellWithArticle:article];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    LJBArticle * article = self.artitles[indexPath.row];
+    
+    LJBArticleInfoController * articleInfoVC = [[LJBArticleInfoController alloc] init];
+    
+    articleInfoVC.articleID = article.articleID;
+    
+    [self.navigationController pushViewController:articleInfoVC animated:YES];
 }
 
 #pragma mark - getter
