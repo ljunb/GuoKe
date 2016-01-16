@@ -179,6 +179,8 @@ static NSString * const kLJBArticleCellIdentifier       = @"LJBArticleCell";
 #pragma mark - 检测网络
 - (void)checkNetwork {
     
+    // 当前已有数据
+    if (self.articleFrames.count) return;
 
     [LJBHTTPTool checkNetworkWithConnected:^{
         
