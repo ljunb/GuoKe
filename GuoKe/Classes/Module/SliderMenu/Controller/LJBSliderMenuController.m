@@ -70,10 +70,6 @@ static NSString * const kSliderMenuCellIdentifier = @"LJBSliderMenuCell";
     // 回收左边菜单
     [self.viewDeckController toggleLeftViewAnimated:YES];
     
-    // 取得中心VC
-    LJBRootController * rootVC = (LJBRootController *)self.viewDeckController.centerController;
-    self.delegate = rootVC;
-    
     // 通知代理
     if ([self.delegate respondsToSelector:@selector(sliderMenuController:didSelectedItemAtIndex:)]) {
         [self.delegate sliderMenuController:self didSelectedItemAtIndex:indexPath.row];

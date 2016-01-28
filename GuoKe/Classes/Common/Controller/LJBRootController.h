@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LJBSliderMenuController.h"
 
-@interface LJBRootController : UIViewController
+@interface LJBRootController : UIViewController <LJBSliderMenuControllerDelegate>
 
 @end

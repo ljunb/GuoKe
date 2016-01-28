@@ -25,7 +25,7 @@ typedef NS_ENUM(NSInteger, LJBControllerType) {
 };
 
 
-@interface LJBRootController () <IIViewDeckControllerDelegate, LJBSliderMenuControllerDelegate>
+@interface LJBRootController () <IIViewDeckControllerDelegate>
 
 @property (nonatomic, copy) NSArray * controllerTitles;
 
@@ -39,6 +39,7 @@ typedef NS_ENUM(NSInteger, LJBControllerType) {
 
 @implementation LJBRootController
 
+#pragma mark - Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -49,22 +50,39 @@ typedef NS_ENUM(NSInteger, LJBControllerType) {
     [self initChildController];
 }
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:LJBBaseControllerDidClickMenuItemNotification
+                                                  object:nil];
+}
+
 #pragma mark - 注册点击LJBBaseController菜单通知
 - (void)registerNotification {
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(didClickMenuItem)
-                                                 name:kLJBBaseControllerDidClickMenuItemNotification
+                                                 name:LJBBaseControllerDidClickMenuItemNotification
                                                object:nil];
 }
 
-#pragma mark - 注销通知
-- (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:kLJBBaseControllerDidClickMenuItemNotification
-                                                  object:nil];
+- (void)didClickMenuItem {
+    
+    self.show = !self.show;
+    
+    if (self.isShow) {  // 显示中心VC
+        
+        [self.viewDeckController closeLeftView];
+        
+        [self hideCoverView];
+        
+    } else {            // 隐藏中心VC
+        
+        [self.viewDeckController openLeftView];
+        
+        [self showCoverView];
+    }
 }
 
-#pragma mark - 基础配置
+#pragma mark - 初始化
 - (void)initBaseConfig {
     
     self.show = YES;    // 初始显示中心VC
@@ -72,7 +90,6 @@ typedef NS_ENUM(NSInteger, LJBControllerType) {
     self.viewDeckController.delegate = self;
 }
 
-#pragma mark - 添加初始VC
 - (void)initChildController {
     
     LJBMainController * mainVC = [[LJBMainController alloc] init];
@@ -86,15 +103,6 @@ typedef NS_ENUM(NSInteger, LJBControllerType) {
     
     self.currentController = unc;
     [self addChildViewController:self.currentController];
-}
-
-
-#pragma mark - LJBSliderMenuControllerDelegate
-- (void)sliderMenuController:(LJBSliderMenuController *)sliderMenuController didSelectedItemAtIndex:(NSInteger)index {
-    
-    self.title = self.controllerTitles[index];
-    
-    [self setupChildControllerWithIndex:index];
 }
 
 #pragma mark - 添加子VC
@@ -138,9 +146,15 @@ typedef NS_ENUM(NSInteger, LJBControllerType) {
     self.currentController = unc;
 }
 
+#pragma mark - LJBSliderMenuControllerDelegate
+- (void)sliderMenuController:(LJBSliderMenuController *)sliderMenuController didSelectedItemAtIndex:(NSInteger)index {
+    
+    self.title = self.controllerTitles[index];
+    
+    [self setupChildControllerWithIndex:index];
+}
 
 #pragma mark - IIViewDeckControllerDelegate
-#pragma mark 滑出侧滑菜单
 - (void)viewDeckController:(IIViewDeckController *)viewDeckController didOpenViewSide:(IIViewDeckSide)viewDeckSide animated:(BOOL)animated {
     
     self.show = NO;
@@ -148,7 +162,6 @@ typedef NS_ENUM(NSInteger, LJBControllerType) {
     [self showCoverView];
 }
 
-#pragma mark 收回侧滑菜单
 - (void)viewDeckController:(IIViewDeckController *)viewDeckController didShowCenterViewFromSide:(IIViewDeckSide)viewDeckSide animated:(BOOL)animated {
     
     self.show = YES;
@@ -156,26 +169,7 @@ typedef NS_ENUM(NSInteger, LJBControllerType) {
     [self hideCoverView];
 }
 
-#pragma mark - 通知处理方法
-- (void)didClickMenuItem {
-    
-    self.show = !self.show;
-    
-    if (self.isShow) {  // 显示中心VC
-        
-        [self.viewDeckController closeLeftView];
-
-        [self hideCoverView];
-        
-    } else {            // 隐藏中心VC
-        
-        [self.viewDeckController openLeftView];
-        
-        [self showCoverView];
-    }
-}
-
-#pragma mark - 显示遮盖层
+#pragma mark - 显示/隐藏遮盖层
 - (void)showCoverView {
     
     if (!_coverView) {
@@ -189,13 +183,11 @@ typedef NS_ENUM(NSInteger, LJBControllerType) {
     }
 }
 
-#pragma mark - 隐藏遮盖层
 - (void)hideCoverView {
     [_coverView removeFromSuperview];
     _coverView = nil;
 }
 
-#pragma mark - 遮盖层单击手势
 - (void)clickedCoverView {
     
     [self hideCoverView];

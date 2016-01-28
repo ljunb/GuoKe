@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-extern NSString * const kLJBBaseControllerDidClickMenuItemNotification;
+extern NSString * const LJBBaseControllerDidClickMenuItemNotification;
 
 @interface LJBNavigationController : UINavigationController
 

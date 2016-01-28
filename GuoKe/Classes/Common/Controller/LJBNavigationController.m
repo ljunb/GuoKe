@@ -12,7 +12,7 @@
 /**
  *  菜单按钮点击事件通知
  */
-NSString * const kLJBBaseControllerDidClickMenuItemNotification = @"LJBBaseControllerDidClickMenuItemNotification";
+NSString * const LJBBaseControllerDidClickMenuItemNotification = @"LJBBaseControllerDidClickMenuItemNotification";
 
 @interface LJBNavigationController ()
 
@@ -63,7 +63,7 @@ NSString * const kLJBBaseControllerDidClickMenuItemNotification = @"LJBBaseContr
 - (void)didClickMenuItem {
     
     // 发送通知
-    [[NSNotificationCenter defaultCenter] postNotificationName:kLJBBaseControllerDidClickMenuItemNotification
+    [[NSNotificationCenter defaultCenter] postNotificationName:LJBBaseControllerDidClickMenuItemNotification
                                                         object:nil];
 }
 

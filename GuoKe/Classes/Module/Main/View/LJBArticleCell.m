@@ -115,7 +115,7 @@
     layer.frame          = view.bounds;
     layer.path           = path.CGPath;
     
-    view.layer.mask      = layer;
+    view.layer.mask = layer;
 }
 
 

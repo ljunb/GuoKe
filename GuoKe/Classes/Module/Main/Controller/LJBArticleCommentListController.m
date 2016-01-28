@@ -27,7 +27,6 @@
 #pragma mark - 创建评论view
 - (void)setupCommentView {
     
-    // 带回调block的初始化方法
     LJBCommentView * comment = [[LJBCommentView alloc] init];
     comment.delegate = self;
     [self.view addSubview:comment];

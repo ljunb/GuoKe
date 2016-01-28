@@ -28,14 +28,17 @@ CGFloat const kViewDeckLeftSize = 100;
     
     LJBSliderMenuController * sliderVC = [[LJBSliderMenuController alloc] init];
     
+    // 设置代理
+    sliderVC.delegate = rootVC;
+    
+    // 初始化ViewDeck控制器
     _viewDeckVC = [[IIViewDeckController alloc] initWithCenterViewController:rootVC
                                                           leftViewController:sliderVC];
     _viewDeckVC.leftSize = kViewDeckLeftSize;
     
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    
+    // 创建UIWindow
+    self.window                    = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = _viewDeckVC;
-    
     [self.window makeKeyAndVisible];
     
     return YES;
