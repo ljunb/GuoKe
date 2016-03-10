@@ -13,11 +13,6 @@
 
 CGFloat const kViewDeckLeftSize = 100;
 
-@interface AppDelegate ()
-
-@property (nonatomic, strong) IIViewDeckController * viewDeckVC;
-
-@end
 
 @implementation AppDelegate
 
@@ -32,13 +27,12 @@ CGFloat const kViewDeckLeftSize = 100;
     sliderVC.delegate = rootVC;
     
     // 初始化ViewDeck控制器
-    _viewDeckVC = [[IIViewDeckController alloc] initWithCenterViewController:rootVC
-                                                          leftViewController:sliderVC];
-    _viewDeckVC.leftSize = kViewDeckLeftSize;
+    IIViewDeckController * viewDeckVC = [[IIViewDeckController alloc] initWithCenterViewController:rootVC leftViewController:sliderVC];
+    viewDeckVC.leftSize = kViewDeckLeftSize;
     
     // 创建UIWindow
-    self.window                    = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = _viewDeckVC;
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = viewDeckVC;
     [self.window makeKeyAndVisible];
     
     return YES;

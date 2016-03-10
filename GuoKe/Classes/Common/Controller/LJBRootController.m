@@ -17,22 +17,45 @@
 #import <Masonry.h>
 #import <ViewDeck.h>
 
+/**
+ *  右侧菜单选项类型
+ */
 typedef NS_ENUM(NSInteger, LJBControllerType) {
+    /**
+     *  首页
+     */
     LJBMainControllerType = 0,
+    /**
+     *  收藏
+     */
     LJBFavoriteControllerType,
+    /**
+     *  设置
+     */
     LJBConfigControllerType,
+    /**
+     *  联系我们
+     */
     LJBConnectionControllerType
 };
 
 
 @interface LJBRootController () <IIViewDeckControllerDelegate>
-
+/**
+ *  控制器标题数组
+ */
 @property (nonatomic, copy) NSArray * controllerTitles;
-
+/**
+ *  当前控制器
+ */
 @property (nonatomic, strong) UIViewController * currentController;
-
+/**
+ *  是否显示主控制器view
+ */
 @property (nonatomic, assign, getter=isShow) BOOL show;
-
+/**
+ *  遮盖层
+ */
 @property (nonatomic, strong) UIView * coverView;
 
 @end
@@ -50,6 +73,7 @@ typedef NS_ENUM(NSInteger, LJBControllerType) {
     [self initChildController];
 }
 
+#pragma mark - 注销通知
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:LJBBaseControllerDidClickMenuItemNotification
@@ -64,25 +88,7 @@ typedef NS_ENUM(NSInteger, LJBControllerType) {
                                                object:nil];
 }
 
-- (void)didClickMenuItem {
-    
-    self.show = !self.show;
-    
-    if (self.isShow) {  // 显示中心VC
-        
-        [self.viewDeckController closeLeftView];
-        
-        [self hideCoverView];
-        
-    } else {            // 隐藏中心VC
-        
-        [self.viewDeckController openLeftView];
-        
-        [self showCoverView];
-    }
-}
-
-#pragma mark - 初始化
+#pragma mark - 初始配置
 - (void)initBaseConfig {
     
     self.show = YES;    // 初始显示中心VC
@@ -90,6 +96,7 @@ typedef NS_ENUM(NSInteger, LJBControllerType) {
     self.viewDeckController.delegate = self;
 }
 
+#pragma mark - 初始控制器
 - (void)initChildController {
     
     LJBMainController * mainVC = [[LJBMainController alloc] init];
@@ -169,7 +176,26 @@ typedef NS_ENUM(NSInteger, LJBControllerType) {
     [self hideCoverView];
 }
 
-#pragma mark - 显示/隐藏遮盖层
+#pragma mark - 汉堡图标Action
+- (void)didClickMenuItem {
+    
+    self.show = !self.show;
+    
+    if (self.isShow) {  // 显示中心VC
+        
+        [self.viewDeckController closeLeftView];
+        
+        [self hideCoverView];
+        
+    } else {            // 隐藏中心VC
+        
+        [self.viewDeckController openLeftView];
+        
+        [self showCoverView];
+    }
+}
+
+#pragma mark - 显示遮盖层
 - (void)showCoverView {
     
     if (!_coverView) {
@@ -183,21 +209,21 @@ typedef NS_ENUM(NSInteger, LJBControllerType) {
     }
 }
 
+#pragma mark - 隐藏遮盖层
 - (void)hideCoverView {
     [_coverView removeFromSuperview];
     _coverView = nil;
 }
 
+#pragma mark - 遮盖层单击事件
 - (void)clickedCoverView {
-    
     [self hideCoverView];
     
     [self didClickMenuItem];
 }
 
 
-
-#pragma mark - getter
+#pragma mark - Getter
 - (NSArray *)controllerTitles {
     
     if (!_controllerTitles) {

@@ -282,12 +282,12 @@
 		EC9D77501C44B7CF003C0D33 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				EC0CA3681C45FF9000AADB7D /* Request */,
-				EC9D77511C44B7CF003C0D33 /* Category */,
 				EC9D77521C44B7CF003C0D33 /* Common */,
+				EC0CA3681C45FF9000AADB7D /* Request */,
 				EC9D77531C44B7CF003C0D33 /* Module */,
-				EC9D77641C44B7CF003C0D33 /* Other */,
+				EC9D77511C44B7CF003C0D33 /* Category */,
 				EC9D77681C44B7CF003C0D33 /* Tool */,
+				EC9D77641C44B7CF003C0D33 /* Other */,
 			);
 			path = Classes;
 			sourceTree = "<group>";

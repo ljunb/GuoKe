@@ -77,14 +77,14 @@ static CGFloat kBottomLineHeight                 = 2;
 
 - (void)configCellWithTitle:(NSString *)title image:(NSString *)image {
     
-    self.menuIcon.image      = [UIImage imageNamed:image];
+    self.menuIcon.image = [UIImage imageNamed:image];
     
-    self.menuTitle.text      = title;
+    self.menuTitle.text = title;
     
     self.indicatorIcon.image = [UIImage imageNamed:@"menu_arrow_press"];
     
-    self.bottomLine.image    = [[UIImage imageNamed:@"menu_line"] stretchableImageWithLeftCapWidth:10
-                                                                                      topCapHeight:1];
+    self.bottomLine.image = [[UIImage imageNamed:@"menu_line"] stretchableImageWithLeftCapWidth:10
+                                                                                   topCapHeight:1];
 }
 
 #pragma mark - getter

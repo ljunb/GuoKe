@@ -32,9 +32,13 @@
  *  评论
  */
 @property (nonatomic, strong) UIBarButtonItem * commentItem;
-
+/**
+ *  加载文章详情的UIWebView
+ */
 @property (nonatomic, strong) UIWebView * webView;
-
+/**
+ *  文章模型
+ */
 @property (nonatomic, strong) LJBArticle * article;
 
 @end

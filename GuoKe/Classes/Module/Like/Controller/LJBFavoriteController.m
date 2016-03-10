@@ -25,6 +25,7 @@ static NSString * const kLJBLikeArticleCellIdentifier = @"LJBLikeArticleCell";
 
 @implementation LJBFavoriteController
 
+#pragma mark - Life Cycle
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
