@@ -8,8 +8,6 @@
 
 #import "LJBCommentView.h"
 #import "LJBButton.h"
-#import "UIColor+LJBExtension.h"
-#import <Masonry.h>
 
 #define LJBScreenSize [UIScreen mainScreen].bounds.size
 

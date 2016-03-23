@@ -7,7 +7,6 @@
 //
 
 #import "LJBButton.h"
-#import "UIView+LJBExtension.h"
 
 @implementation LJBButton
 

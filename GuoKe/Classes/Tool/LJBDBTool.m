@@ -68,7 +68,7 @@ static LJBDBTool * dbTool = nil;
     
     if ([_fmDataBase open]) {
         
-        NSLog(@"成功创建数据库db_guoke.sqlite");
+        LJBLog(@"成功创建数据库db_guoke.sqlite");
         
         [self createTable];
     }
@@ -82,7 +82,7 @@ static LJBDBTool * dbTool = nil;
     
     if ([_fmDataBase executeUpdate:createSQL]) {
         
-        NSLog(@"成功创建缓存表t_article_cach");
+        LJBLog(@"成功创建缓存表t_article_cach");
     }
     
     // 收藏表
@@ -90,7 +90,7 @@ static LJBDBTool * dbTool = nil;
     
     if ([_fmDataBase executeUpdate:likeSQL]) {
         
-        NSLog(@"成功创建收藏表t_article_like");
+        LJBLog(@"成功创建收藏表t_article_like");
     }
     
 }
@@ -109,7 +109,7 @@ static LJBDBTool * dbTool = nil;
     }
     
     if (!success) {
-        NSLog(@"插入失败！");
+        LJBLog(@"插入失败！");
     }
 }
 
@@ -169,7 +169,7 @@ static LJBDBTool * dbTool = nil;
     }
     
     if (!success) {
-        NSLog(@"无法清空缓存数据！");
+        LJBLog(@"无法清空缓存数据！");
     }
 }
 
@@ -186,7 +186,7 @@ static LJBDBTool * dbTool = nil;
     }
     
     if (!success) {
-        NSLog(@"收藏失败！");
+        LJBLog(@"收藏失败！");
     }
     
     
@@ -204,7 +204,7 @@ static LJBDBTool * dbTool = nil;
     }
     
     if (!success) {
-        NSLog(@"无法取消收藏！");
+        LJBLog(@"无法取消收藏！");
     }
 }
 

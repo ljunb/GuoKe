@@ -7,15 +7,11 @@
 //  文章详情VC
 
 #import "LJBArticleInfoController.h"
-#import "UIBarButtonItem+LJBExtension.h"
-#import "UIView+LJBExtension.h"
 #import "LJBCommentView.h"
 #import "LJBArticleCommentListController.h"
 #import "LJBArticle.h"
 #import "LJBArticle+LJBRequest.h"
 #import "LJBDBTool.h"
-#import <Masonry.h>
-#import <MJRefresh.h>
 
 #define ArticleHTML @"http://jingxuan.guokr.com/pick/v2/%@/"
 
@@ -125,7 +121,7 @@
 #pragma mark - LJBCommentViewDelegate
 - (void)commentViewDidClick:(LJBCommentView *)commentView {
     
-    NSLog(@"点击了评论view");
+    LJBLog(@"点击了评论view");
 }
 
 #pragma mark - 获取文章数据
@@ -138,7 +134,7 @@
         [self handleHTML];
         
     } failureBlock:^(NSError *error) {
-        NSLog(@"Fetch article info error : %@", error);
+        LJBLog(@"Fetch article info error : %@", error);
     }];
 }
 
@@ -176,7 +172,7 @@
 
 #pragma mark 分享
 - (void)didClickShareItem {
-    NSLog(@"click share item");
+    LJBLog(@"click share item");
 }
 
 #pragma mark 收藏
@@ -193,7 +189,7 @@
         [[LJBDBTool sharedDB] dislikeArticle:self.article];
     }
     
-    NSLog(@"%@", [[LJBDBTool sharedDB] getAllLikeArticles]);
+    LJBLog(@"%@", [[LJBDBTool sharedDB] getAllLikeArticles]);
 }
 
 #pragma mark 评论

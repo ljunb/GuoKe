@@ -11,7 +11,6 @@
 #import "LJBArticle.h"
 #import "LJBDBTool.h"
 #import "LJBArticleInfoController.h"
-#import <Masonry.h>
 
 static NSString * const kLJBLikeArticleCellIdentifier = @"LJBLikeArticleCell";
 

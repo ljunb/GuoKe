@@ -10,15 +10,16 @@
 #import "LJBArticleFrame.h"
 #import "LJBArticle.h"
 #import "LJBButton.h"
-#import "UIView+LJBExtension.h"
+#import "UICollectionViewCell+LJBExtension.h"
 #import "LJBDateTool.h"
-#import <Masonry.h>
 #import <UIImageView+WebCache.h>
 
 #define CellCornerRadii CGSizeMake(5, 5)
 
 
 @interface LJBArticleCell ()
+
+@property (nonatomic, strong) LJBArticleFrame * articleF;
 
 @property (nonatomic, strong) UIImageView * headImage;
 
@@ -36,12 +37,17 @@
 
 @implementation LJBArticleCell
 
-- (instancetype)initWithFrame:(CGRect)frame {
+- (void)configCell:(UICollectionViewCell *)cell object:(id)obj indexPath:(NSIndexPath *)indexPath {
     
-    if (self = [super initWithFrame:frame]) {
-        
-    }
-    return self;
+    LJBArticleFrame * articleF = (LJBArticleFrame *)obj;
+    
+    LJBArticleCell * articleCell = (LJBArticleCell *)cell;
+    
+    articleCell.articleF = articleF;
+}
+
++ (CGSize)getSizeWithObject:(id)obj indexPath:(NSIndexPath *)indexPath {
+    return ((LJBArticleFrame *)obj).cellSize;
 }
 
 #pragma mark - 重写setter方法

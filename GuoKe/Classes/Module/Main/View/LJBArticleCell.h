@@ -8,10 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class LJBArticleFrame;
 
 @interface LJBArticleCell : UICollectionViewCell
-
-@property (nonatomic, strong) LJBArticleFrame * articleF;
 
 @end

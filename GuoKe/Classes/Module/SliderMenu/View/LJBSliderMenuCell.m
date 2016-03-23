@@ -8,7 +8,7 @@
 
 #import "LJBSliderMenuCell.h"
 #import "AppDelegate.h"
-#import <Masonry.h>
+
 
 static CGFloat const kMenuIconTopAndBottomMargin = 15;
 static CGFloat const kMenuIconLeftMargin         = 20;

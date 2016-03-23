@@ -8,7 +8,6 @@
 
 #import "LJBArticleCommentListController.h"
 #import "LJBCommentView.h"
-#import <Masonry.h>
 
 @interface LJBArticleCommentListController () <LJBCommentViewDelegate>
 
@@ -39,7 +38,7 @@
 
 #pragma mark - LJBCommentViewDelegate
 - (void)commentViewDidClick:(LJBCommentView *)commentView {
-    NSLog(@"点击了评论列表评论view");
+    LJBLog(@"点击了评论列表评论view");
 }
 
 @end

@@ -12,23 +12,23 @@
 #import "LJBArticleFrame.h"
 #import "LJBArticle.h"
 #import "LJBArticleCell.h"
-#import "UIColor+LJBExtension.h"
 #import "LJBArticleParam.h"
 #import "LJBHTTPTool.h"
 #import "LJBDBTool.h"
-#import <Masonry.h>
-#import <MJRefresh.h>
 #import <CHTCollectionViewWaterfallLayout.h>
+#import "LJBMainTableDataSourceSeparation.h"
 
 static CGFloat const kLayoutSectionInset                = 10;
 static CGFloat const kLayoutColumnAndInteritemSpacing   = 10;
 static NSString * const kLJBArticleCellIdentifier       = @"LJBArticleCell";
 
-@interface LJBMainController () <UICollectionViewDataSource, UICollectionViewDelegate, CHTCollectionViewDelegateWaterfallLayout>
+@interface LJBMainController ()
 
 @property (nonatomic, strong) NSMutableArray * articleFrames;
 
 @property (nonatomic, strong) UICollectionView * collectionView;
+
+@property (nonatomic, strong) LJBMainTableDataSourceSeparation * collectionViewHander;
 
 @end
 
@@ -49,24 +49,45 @@ static NSString * const kLJBArticleCellIdentifier       = @"LJBArticleCell";
 
     [self setupCollectionView];
     
-    [self registerCell];
-    
     [self addRefresh];
 }
 
 #pragma mark - 初始化UICollectionView
 - (void)setupCollectionView {
     
+    // 设置约束
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view).insets(UIEdgeInsetsZero);
     }];
     self.collectionView.backgroundColor = [UIColor articleCollectionViewBackgroundColor];
-}
-
-#pragma mark - 注册cell
-- (void)registerCell {
     
-    [self.collectionView registerClass:[LJBArticleCell class] forCellWithReuseIdentifier:kLJBArticleCellIdentifier];
+    // 配置回调
+    CellConfigBlock configBlock = ^(NSIndexPath *indexPath, id obj, UICollectionViewCell * cell){
+        [cell configCell:cell object:obj indexPath:indexPath];
+    };
+    
+    // 选中回调
+    CellSelectedBlock selectedBlock = ^(NSIndexPath *indexPath, id obj) {
+        LJBArticleFrame * articleF = (LJBArticleFrame *)obj;
+    
+        LJBArticleInfoController * articleInfoVC = [[LJBArticleInfoController alloc] init];
+        articleInfoVC.articleID = articleF.article.articleID;
+        [self.navigationController pushViewController:articleInfoVC animated:YES];
+    };
+    
+    // cell大小回调
+    CellSizeBlock sizeBlock = ^CGSize (NSIndexPath *indexPath) {
+        return [LJBArticleCell getSizeWithObject:self.articleFrames[indexPath.item] indexPath:indexPath];
+    };
+    
+    self.collectionViewHander = [[LJBMainTableDataSourceSeparation alloc] initWithDataSource:self.articleFrames
+                                                                              cellIdentifier:kLJBArticleCellIdentifier
+                                                                                 configBlock:configBlock
+                                                                               selectedBlock:selectedBlock
+                                                                                   sizeBlock:sizeBlock];
+    // 设置代理和数据源
+    [self.collectionViewHander setupDelegateAndDataSourceWithCollectionView:self.collectionView];
+    
 }
 
 #pragma mark - 添加上/拉刷新  
@@ -114,7 +135,7 @@ static NSString * const kLJBArticleCellIdentifier       = @"LJBArticleCell";
         
     } failureBlock:^(NSError *error) {
         
-        NSLog(@"Fetch articles failed : %@", error);
+        LJBLog(@"Fetch articles failed : %@", error);
 
         [self.collectionView.mj_header endRefreshing];
     }];
@@ -138,42 +159,10 @@ static NSString * const kLJBArticleCellIdentifier       = @"LJBArticleCell";
         
     } failureBlock:^(NSError *error) {
         
-        NSLog(@"Fetch more articles failed : %@", error);
+        LJBLog(@"Fetch more articles failed : %@", error);
         
         [self.collectionView.mj_footer endRefreshing];
     }];
-}
-
-#pragma mark - UICollectionViewDelegate
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.articleFrames.count;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    LJBArticleCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:kLJBArticleCellIdentifier forIndexPath:indexPath];
-    
-    cell.articleF = self.articleFrames[indexPath.item];
-    
-    return cell;
-}
-
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    LJBArticleFrame * articleF = self.articleFrames[indexPath.item];
-    
-    return articleF.cellSize;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    LJBArticleFrame * articleF = self.articleFrames[indexPath.item];
-    
-    LJBArticleInfoController * articleInfoVC = [[LJBArticleInfoController alloc] init];
-    
-    articleInfoVC.articleID = articleF.article.articleID;
-    
-    [self.navigationController pushViewController:articleInfoVC animated:YES];
 }
 
 #pragma mark - 检测网络
@@ -244,8 +233,6 @@ static NSString * const kLJBArticleCellIdentifier       = @"LJBArticleCell";
         layout.minimumInteritemSpacing  = kLayoutColumnAndInteritemSpacing; // cell垂直间距
         
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
-        _collectionView.dataSource = self;
-        _collectionView.delegate = self;
         
         [self.view addSubview:_collectionView];
     }

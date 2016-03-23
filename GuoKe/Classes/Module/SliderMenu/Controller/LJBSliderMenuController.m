@@ -9,9 +9,6 @@
 #import "LJBSliderMenuController.h"
 #import "LJBSliderMenuCell.h"
 #import "LJBRootController.h"
-#import <Masonry.h>
-#import <ViewDeck.h>
-#import "UIColor+LJBExtension.h"
 
 static NSString * const kSliderMenuCellIdentifier = @"LJBSliderMenuCell";
 

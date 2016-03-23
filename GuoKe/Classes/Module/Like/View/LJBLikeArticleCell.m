@@ -10,7 +10,7 @@
 #import "LJBArticle.h"
 #import "LJBButton.h"
 #import "LJBDateTool.h"
-#import <Masonry.h>
+
 
 static CGFloat const kTitleTopPadding  = 15;
 static CGFloat const kTitleLeftPadding = 10;
